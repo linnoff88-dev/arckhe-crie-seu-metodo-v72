@@ -1,50 +1,50 @@
 #!/usr/bin/env python3
-"""Conferidor do INEMA Learning 7.13.16 — as MESMAS regras do assets/v72-conferidor.js (seção "conferidor").
+"""Conferidor do ARCKHÉ Learning 7.13.16 â€” as MESMAS regras do assets/v72-conferidor.js (seÃ§Ã£o "conferidor").
 
-O aluno escreve um arquivo (ficha, cartão, decupagem) e a página confere. Este script é a opção para quem tem
+O aluno escreve um arquivo (ficha, cartÃ£o, decupagem) e a pÃ¡gina confere. Este script Ã© a opÃ§Ã£o para quem tem
 terminal: confere o mesmo arquivo, com as regras escritas no JSON da aula.
 
-    python3 conferir.py                          # lista as aulas que têm conferidor
+    python3 conferir.py                          # lista as aulas que tÃªm conferidor
     python3 conferir.py <aula> <arquivo.txt>     # confere o seu arquivo
     python3 conferir.py <aula> --exemplo         # confere o exemplo que passa (ensaio)
     python3 conferir.py <aula> --errado          # confere o exemplo com erro
-    python3 conferir.py <aula> ... --lang en     # regras e mensagens em inglês (conteudo/en)
+    python3 conferir.py <aula> ... --lang en     # regras e mensagens em inglÃªs (conteudo/en)
 
-Sai 0 quando passa ("OK: ...") e 1 quando falta algo. Regras (lista "regras" da seção):
-  campos      {campos: [rótulos], min}       cada rótulo numa linha "Rótulo: texto" com pelo menos <min> letras
-  planos      {min, max}                     linhas que começam por número ("1 | ...", "2. ...") = planos
+Sai 0 quando passa ("OK: ...") e 1 quando falta algo. Regras (lista "regras" da seÃ§Ã£o):
+  campos      {campos: [rÃ³tulos], min}       cada rÃ³tulo numa linha "RÃ³tulo: texto" com pelo menos <min> letras
+  planos      {min, max}                     linhas que comeÃ§am por nÃºmero ("1 | ...", "2. ...") = planos
   cada_plano  {grupos: [{rot, termos, um_so?, variar?, min?}]}
-              cada plano tem um termo de cada grupo; "a / b / c" num termo = sinônimos (contam como um);
-              um_so: no máximo uma família por plano; variar: N famílias diferentes no conjunto;
-              min: rótulo ("som:") só vale com >= min letras depois dele, até o próximo |
+              cada plano tem um termo de cada grupo; "a / b / c" num termo = sinÃ´nimos (contam como um);
+              um_so: no mÃ¡ximo uma famÃ­lia por plano; variar: N famÃ­lias diferentes no conjunto;
+              min: rÃ³tulo ("som:") sÃ³ vale com >= min letras depois dele, atÃ© o prÃ³ximo |
   duracao     {min, max}                     cada plano tem "N s"; a soma fica entre min e max
-  termos      {grupos: [{rot, termos, campo?}]}  o texto todo cita um termo de cada grupo (com campo: só a linha "Campo: …")
-  video       {min, max, proporcao?, largura_min?}   7.12.15: modo vídeo — o argumento é o arquivo de vídeo
-              (duração e tamanho pelo ffprobe); proporcao "16:9" ou lista ["16:9", "9:16"]; clipes de exemplo
+  termos      {grupos: [{rot, termos, campo?}]}  o texto todo cita um termo de cada grupo (com campo: sÃ³ a linha "Campo: â€¦")
+  video       {min, max, proporcao?, largura_min?}   7.12.15: modo vÃ­deo â€” o argumento Ã© o arquivo de vÃ­deo
+              (duraÃ§Ã£o e tamanho pelo ffprobe); proporcao "16:9" ou lista ["16:9", "9:16"]; clipes de exemplo
               em video_ok / video_erro (caminhos no repo)
 """
 import json, pathlib, re, sys, unicodedata
 
 RAIZ = pathlib.Path(__file__).resolve().parent
-PLANO = re.compile(r"^\s*\d{1,2}\s*[|.)\-–—]")
+PLANO = re.compile(r"^\s*\d{1,2}\s*[|.)\-â€“â€”]")
 DURACAO = re.compile(r"(\d+(?:[.,]\d+)?)\s*(?:s|seg|segundos?|seconds?|sec)\b")
-UI = {  # padrões (iguais a CONF_UI do gerar.py); o curso.json → ui pode trocar e traduzir
+UI = {  # padrÃµes (iguais a CONF_UI do gerar.py); o curso.json â†’ ui pode trocar e traduzir
     "conf_vazio": "Cole o texto ou carregue o arquivo antes de conferir.",
-    "conf_falta": "Ainda não. O que falta:",
-    "conf_campo": "Falta a linha {c}: com a descrição (pelo menos {x} letras).",
-    "conf_planos": "Achei {n} planos numerados; o pedido é de {x} a {y}. Comece cada plano pelo número (1 | ...).",
+    "conf_falta": "Ainda nÃ£o. O que falta:",
+    "conf_campo": "Falta a linha {c}: com a descriÃ§Ã£o (pelo menos {x} letras).",
+    "conf_planos": "Achei {n} planos numerados; o pedido Ã© de {x} a {y}. Comece cada plano pelo nÃºmero (1 | ...).",
     "conf_no_plano": "Plano {i}: falta {g}.",
-    "conf_um_so": "Plano {i}: {n} escolhas de {g}; fique com uma só.",
-    "conf_variedade": "Só {n} tipo(s) diferente(s) de {g} nos planos; varie para pelo menos {x}.",
-    "conf_sem_duracao": "Plano {i}: falta a duração em segundos (ex.: 4 s).",
-    "conf_duracao": "Os planos somam {s} s; o pedido é de {x} a {y} s.",
+    "conf_um_so": "Plano {i}: {n} escolhas de {g}; fique com uma sÃ³.",
+    "conf_variedade": "SÃ³ {n} tipo(s) diferente(s) de {g} nos planos; varie para pelo menos {x}.",
+    "conf_sem_duracao": "Plano {i}: falta a duraÃ§Ã£o em segundos (ex.: 4 s).",
+    "conf_duracao": "Os planos somam {s} s; o pedido Ã© de {x} a {y} s.",
     "conf_termo": "Falta citar {g}.",
-    "conf_mais": "… e mais {n}.",
-    # 7.12.15: modo vídeo (regra "video")
-    "conf_video_dur": "O vídeo tem {s} s; o pedido é de {x} a {y} s.",
-    "conf_video_prop": "O vídeo é {w}×{h} ({p}); o pedido é {q}.",
-    "conf_video_larg": "O vídeo tem {w} px de largura; o mínimo é {x} px.",
-    "conf_video_ler": "Não consegui ler este vídeo. Exporte em MP4 (H.264) ou WebM e tente de novo.",
+    "conf_mais": "â€¦ e mais {n}.",
+    # 7.12.15: modo vÃ­deo (regra "video")
+    "conf_video_dur": "O vÃ­deo tem {s} s; o pedido Ã© de {x} a {y} s.",
+    "conf_video_prop": "O vÃ­deo Ã© {w}Ã—{h} ({p}); o pedido Ã© {q}.",
+    "conf_video_larg": "O vÃ­deo tem {w} px de largura; o mÃ­nimo Ã© {x} px.",
+    "conf_video_ler": "NÃ£o consegui ler este vÃ­deo. Exporte em MP4 (H.264) ou WebM e tente de novo.",
 }
 
 PROPORCOES = {"16:9": 16 / 9, "9:16": 9 / 16, "1:1": 1.0, "4:5": 4 / 5, "4:3": 4 / 3, "2.39:1": 2.39, "1.85:1": 1.85}
@@ -56,11 +56,11 @@ def regra_video(sec):
 
 
 def nome_proporcao(w, h):
-    """1920×1080 → '16:9'; fora das conhecidas (2 % de folga), a razão reduzida ('5:3')."""
+    """1920Ã—1080 â†’ '16:9'; fora das conhecidas (2 % de folga), a razÃ£o reduzida ('5:3')."""
     if not w or not h:
         return "?"
     for nome, v in PROPORCOES.items():
-        if abs(w / h - v) / v <= 0.03:  # 7.13.16: 3 % (1280×704 do Wan 2.2 5B = 16:9; 2 % recusava)
+        if abs(w / h - v) / v <= 0.03:  # 7.13.16: 3 % (1280Ã—704 do Wan 2.2 5B = 16:9; 2 % recusava)
             return nome
     from math import gcd
     g = gcd(int(w), int(h)) or 1
@@ -68,13 +68,13 @@ def nome_proporcao(w, h):
 
 
 def seg1(v, lang):
-    """Duração com uma casa: 8.016 → '8,0' (pt/es) ou '8.0' (en)."""
+    """DuraÃ§Ã£o com uma casa: 8.016 â†’ '8,0' (pt/es) ou '8.0' (en)."""
     s = f"{v:.1f}"
     return s if lang == "en" else s.replace(".", ",")
 
 
 def conferir_video(info, sec, ui=None, lang="pt"):
-    """info = (duração em s, largura, altura) ou None quando o arquivo não pôde ser lido. Mesmas mensagens do JS."""
+    """info = (duraÃ§Ã£o em s, largura, altura) ou None quando o arquivo nÃ£o pÃ´de ser lido. Mesmas mensagens do JS."""
     T = {**UI, **(ui or {})}
     r = regra_video(sec)
     if not info or not info[0] or not info[1]:
@@ -82,7 +82,7 @@ def conferir_video(info, sec, ui=None, lang="pt"):
     d, w, h = info
     faltas, p = [], nome_proporcao(w, h)
     if not r.get("min", 0) <= round(d, 1) <= r.get("max", 10 ** 6):
-        faltas.append(fmt(T["conf_video_dur"], s=seg1(d, lang), x=r.get("min", 0), y=r.get("max", "∞")))
+        faltas.append(fmt(T["conf_video_dur"], s=seg1(d, lang), x=r.get("min", 0), y=r.get("max", "âˆž")))
     props = r.get("proporcao") or []
     props = [props] if isinstance(props, str) else props
     if props and p not in props:
@@ -95,7 +95,7 @@ def conferir_video(info, sec, ui=None, lang="pt"):
 
 
 def sonda(caminho):
-    """(duração, largura, altura) pelo ffprobe; None se não houver ffprobe ou o arquivo não for vídeo."""
+    """(duraÃ§Ã£o, largura, altura) pelo ffprobe; None se nÃ£o houver ffprobe ou o arquivo nÃ£o for vÃ­deo."""
     import subprocess
     try:
         out = subprocess.run(["ffprobe", "-v", "error", "-select_streams", "v:0", "-show_entries",
@@ -114,17 +114,17 @@ def norm(t):
 
 
 def familias(grupo):
-    """['close / close-up / primeiro plano', 'plano médio'] → [['close', 'close-up', 'primeiro plano'], ['plano medio']]"""
-    # 7.13.16: família com " / " (barra entre espaços) separa só ali, e o termo pode ter barra ("out/2026", "16:9")
+    """['close / close-up / primeiro plano', 'plano mÃ©dio'] â†’ [['close', 'close-up', 'primeiro plano'], ['plano medio']]"""
+    # 7.13.16: famÃ­lia com " / " (barra entre espaÃ§os) separa sÃ³ ali, e o termo pode ter barra ("out/2026", "16:9")
     return [[norm(x).strip() for x in (fam.split(" / ") if " / " in fam else fam.split("/")) if x.strip()]
             for fam in grupo.get("termos", [])]
 
 
 def achados(linha, grupos):
-    """Para cada grupo, o conjunto de famílias citadas na linha. Termo dentro de termo maior (de qualquer grupo) não conta:
-    'extreme close-up' não conta também como 'close-up'."""
+    """Para cada grupo, o conjunto de famÃ­lias citadas na linha. Termo dentro de termo maior (de qualquer grupo) nÃ£o conta:
+    'extreme close-up' nÃ£o conta tambÃ©m como 'close-up'."""
     ln = norm(linha)
-    cand = []  # (início, fim, grupo, família)
+    cand = []  # (inÃ­cio, fim, grupo, famÃ­lia)
     for gi, g in enumerate(grupos):
         for fi, fam in enumerate(familias(g)):
             for termo in fam:
@@ -141,7 +141,7 @@ def achados(linha, grupos):
 
 
 def preenchido(linha, grupo):
-    """7.11.14: grupo-rótulo com "min" (ex.: "som:") só conta se depois do rótulo, até o próximo |, houver >= min letras."""
+    """7.11.14: grupo-rÃ³tulo com "min" (ex.: "som:") sÃ³ conta se depois do rÃ³tulo, atÃ© o prÃ³ximo |, houver >= min letras."""
     ln = norm(linha)
     for fam in familias(grupo):
         for termo in fam:
@@ -153,7 +153,7 @@ def preenchido(linha, grupo):
 
 
 def duracao_do_plano(linha):
-    """7.11.14: a coluna que é só a duração ("4 s") vale primeiro; se não houver, a primeira menção "N s" da linha."""
+    """7.11.14: a coluna que Ã© sÃ³ a duraÃ§Ã£o ("4 s") vale primeiro; se nÃ£o houver, a primeira menÃ§Ã£o "N s" da linha."""
     for col in norm(linha).split("|")[1:]:
         m = re.fullmatch(r"\s*(\d+(?:[.,]\d+)?)\s*(?:s|seg|segundos?|seconds?|sec)\s*", col)
         if m:
@@ -184,7 +184,7 @@ def conferir(texto, sec, ui=None, lang="pt"):
         if t == "campos":
             mn = r.get("min", 3)
             for c in r["campos"]:
-                pad = re.compile(r"^\s*[-*•]?\s*" + re.escape(norm(c)) + r"\s*:\s*(.*)$")
+                pad = re.compile(r"^\s*[-*â€¢]?\s*" + re.escape(norm(c)) + r"\s*:\s*(.*)$")
                 ok = False
                 for l in linhas:
                     m = pad.match(norm(l))
@@ -222,8 +222,8 @@ def conferir(texto, sec, ui=None, lang="pt"):
             tudo = "\n".join(linhas)
             for gi, g in enumerate(r["grupos"]):
                 alvo = tudo
-                if g.get("campo"):  # 7.13.16: só a linha "Campo: …" conta
-                    pc = re.compile(r"^\s*[-*•]?\s*" + re.escape(norm(g["campo"])) + r"\s*:(.*)$")
+                if g.get("campo"):  # 7.13.16: sÃ³ a linha "Campo: â€¦" conta
+                    pc = re.compile(r"^\s*[-*â€¢]?\s*" + re.escape(norm(g["campo"])) + r"\s*:(.*)$")
                     alvo = "\n".join((pc.match(norm(l)) or [None, ""])[1] for l in linhas)
                 if not achados(alvo, r["grupos"])[gi]:
                     faltas.append(fmt(T["conf_termo"], g=g["rot"]))
@@ -234,7 +234,7 @@ def conferir(texto, sec, ui=None, lang="pt"):
 
 
 def secoes(lang="pt"):
-    """[(slug da aula, índice da seção 1..N como no gerar.py, seção, ui)] de todos os conferidores do curso."""
+    """[(slug da aula, Ã­ndice da seÃ§Ã£o 1..N como no gerar.py, seÃ§Ã£o, ui)] de todos os conferidores do curso."""
     base = RAIZ / "conteudo" / lang
     ui = json.loads((base / "curso.json").read_text()).get("ui", {})
     out = []
@@ -257,16 +257,16 @@ def main(argv):
     todas = secoes(lang)
     if not argv:
         for slug, n, s, _ in todas:
-            print(f"{slug}  ·  {re.sub('<[^>]+>', '', s['titulo'])}")
+            print(f"{slug}  Â·  {re.sub('<[^>]+>', '', s['titulo'])}")
         return 0
     slug = argv[0]
     alvo = [x for x in todas if x[0] == slug]
     if not alvo:
-        print(f"a aula '{slug}' não tem conferidor; rode sem argumentos para ver a lista"); return 2
+        print(f"a aula '{slug}' nÃ£o tem conferidor; rode sem argumentos para ver a lista"); return 2
     _, _, sec, ui = alvo[0]
     if len(argv) < 2:
         print("uso: python3 conferir.py <aula> <arquivo.txt> | --exemplo | --errado"); return 2
-    if regra_video(sec):  # 7.12.15: modo vídeo — o argumento é o arquivo de vídeo (ffprobe)
+    if regra_video(sec):  # 7.12.15: modo vÃ­deo â€” o argumento Ã© o arquivo de vÃ­deo (ffprobe)
         alvo_v = {"--exemplo": RAIZ / sec.get("video_ok", ""), "--errado": RAIZ / sec.get("video_erro", "")}.get(argv[1], argv[1])
         ok, msg, faltas = conferir_video(sonda(alvo_v), sec, ui, lang)
         print(msg)

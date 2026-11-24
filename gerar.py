@@ -1,37 +1,37 @@
 #!/usr/bin/env python3
-"""INEMA Learning v7.2 — gera o curso a partir de conteudo/ (PT na raiz; EN/ES em en/ e es/).
+"""ARCKHÉ Learning v7.2 â€” gera o curso a partir de conteudo/ (PT na raiz; EN/ES em en/ e es/).
 
     python3 gerar.py            # PT (raiz)
     python3 gerar.py --lang en  # quando existir conteudo/en/
 
-Cada aula é um JSON em conteudo/<lang>/aulas/. Textos de interface ficam em conteudo/<lang>/curso.json → "ui".
-Campos de texto aceitam <b>, <code>, <a> e <br>; o resto é escapado na origem (blocos de código).
+Cada aula Ã© um JSON em conteudo/<lang>/aulas/. Textos de interface ficam em conteudo/<lang>/curso.json â†’ "ui".
+Campos de texto aceitam <b>, <code>, <a> e <br>; o resto Ã© escapado na origem (blocos de cÃ³digo).
 """
 import argparse, html, json, pathlib, re, sys
 
-VERSAO = "7.14.19"    # versão do motor (CHANGELOG.md da skill formato-curso-v72)
+VERSAO = "7.14.19"    # versÃ£o do motor (CHANGELOG.md da skill formato-curso-v72)
 RAIZ = pathlib.Path(__file__).resolve().parent
-PREFIXO = "../../"  # caminho até a raiz a partir da página em geração (v7.2: foto do "Você" no diagrama)
+PREFIXO = "../../"  # caminho atÃ© a raiz a partir da pÃ¡gina em geraÃ§Ã£o (v7.2: foto do "VocÃª" no diagrama)
 FOTO_VOCE = "assets/img/voce.jpg"
-LANG = "pt"          # idioma em geração; PT fica na raiz, os outros em <lang>/ (definido em main)
+LANG = "pt"          # idioma em geraÃ§Ã£o; PT fica na raiz, os outros em <lang>/ (definido em main)
 IDIOMAS = ["pt"]     # idiomas com conteudo/<lang>/curso.json (seletor e hreflang)
-URL_RAIZ = ""        # URL publicada da raiz (versão PT)
+URL_RAIZ = ""        # URL publicada da raiz (versÃ£o PT)
 ROT_IDIOMA = {"pt": "PT", "en": "EN", "es": "ES"}
 HREFLANG = {"pt": "pt-BR", "en": "en", "es": "es"}
 
 
 def ativo(prefixo):
-    """Caminho até a RAIZ do repo (assets/), a partir da página: em en/ e es/ sobe um nível a mais."""
+    """Caminho atÃ© a RAIZ do repo (assets/), a partir da pÃ¡gina: em en/ e es/ sobe um nÃ­vel a mais."""
     return prefixo + ("" if LANG == "pt" else "../")
 
 
 def href_lang(o):
-    """7.14.19: link com versão por idioma — {"href": PT, "href_en": …, "href_es": …}; sem a chave do idioma, o href PT."""
+    """7.14.19: link com versÃ£o por idioma â€” {"href": PT, "href_en": â€¦, "href_es": â€¦}; sem a chave do idioma, o href PT."""
     return o.get(f"href_{LANG}") or o["href"]
 
 
 def img_idioma(rel):
-    """assets/img/capa.jpg → assets/img/capa-en.jpg quando existir a versão do idioma (imagem com texto)."""
+    """assets/img/capa.jpg â†’ assets/img/capa-en.jpg quando existir a versÃ£o do idioma (imagem com texto)."""
     if LANG != "pt":
         alt = re.sub(r"(\.\w+)$", f"-{LANG}\\1", rel)
         if (RAIZ / alt).exists():
@@ -47,7 +47,7 @@ def id_curso(curso):
     """Progresso separado por idioma."""
     return curso["id"] if LANG == "pt" else f'{curso["id"]}-{LANG}'
 
-ICONES = {  # traço fino estilo Lucide (MIT)
+ICONES = {  # traÃ§o fino estilo Lucide (MIT)
     "chat": '<path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>',
     "terminal": '<polyline points="4 17 10 11 4 5"/><line x1="12" y1="19" x2="20" y2="19"/>',
     "pasta": '<path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/>',
@@ -102,8 +102,8 @@ def attr(s):
     return html.escape(s, quote=True)
 
 
-# ---------- seções ----------
-# conexão desenhada entre blocos; o ponto de luz corre quando o bloco seguinte está em foco
+# ---------- seÃ§Ãµes ----------
+# conexÃ£o desenhada entre blocos; o ponto de luz corre quando o bloco seguinte estÃ¡ em foco
 CONECTOR = ('<span class="dg-seta" aria-hidden="true"><svg viewBox="0 0 48 14"><line x1="2" y1="7" x2="40" y2="7"/>'
             '<path d="M36 2 L45 7 L36 12"/></svg><i class="pulso"></i></span>')
 
@@ -122,7 +122,7 @@ def sec_diagrama(s, ui):
                 lis.append(f'<li>{ic(it.get("icone", "alvo"))}<span>{it["t"]}{sub_it}</span></li>')
             itens = "<ul>" + "".join(lis) + "</ul>"
         sub = f'<span class="sub">{n["sub"]}</span>' if n.get("sub") else ""
-        # v7.2: número da etapa (se o título já não começa com número) e foto no lugar do ícone de pessoa
+        # v7.2: nÃºmero da etapa (se o tÃ­tulo jÃ¡ nÃ£o comeÃ§a com nÃºmero) e foto no lugar do Ã­cone de pessoa
         dn = "" if re.match(r"\d", n["titulo"]) else f'<b class="dn">{i + 1}</b>'
         foto = n.get("icone") == "usuario" and (RAIZ / FOTO_VOCE).exists()
         icone = (f'<span class="ic foto"><img src="{PREFIXO}{FOTO_VOCE}" alt="" width="160" height="160" loading="lazy"/></span>'
@@ -144,13 +144,13 @@ def sec_diagrama(s, ui):
 
 
 def figura_rolagem(figura, passos, leg, ui, dica=True):
-    """Infográfico fixo no alto; cada etapa da explicação acende os blocos correspondentes."""
+    """InfogrÃ¡fico fixo no alto; cada etapa da explicaÃ§Ã£o acende os blocos correspondentes."""
     dica_html = f'<p class="sc-dica">{ic("seta")}{ui["role_dica"]}</p>' if dica else ""
     lis = "".join(f'<li class="sc-passo" data-foco="{",".join(map(str, p["foco"]))}"><span class="sc-n">{i + 1}/{len(passos)}</span>'
                   f'<h3>{p["titulo"]}</h3><p>{p["texto"]}</p></li>' for i, p in enumerate(passos))
     p0 = passos[0]
     nav = "".join(f'<button type="button" class="sc-ir" data-ir="{i}" title="{attr(re.sub("<[^>]+>", "", p["titulo"]))}">'
-                  f'<b>{i + 1}</b><span>{re.sub(rf"^{i + 1}\s*·\s*", "", p.get("curto", p["titulo"]))}</span></button>' for i, p in enumerate(passos))
+                  f'<b>{i + 1}</b><span>{re.sub(rf"^{i + 1}\s*Â·\s*", "", p.get("curto", p["titulo"]))}</span></button>' for i, p in enumerate(passos))
     cap = (f'<div class="sc-cap" aria-hidden="true"><span class="sc-n">1/{len(passos)}</span>'
            f'<h3>{p0["titulo"]}</h3><p>{p0["texto"]}</p></div>')
     return (f'<div class="scrolly dg-bloco"><div class="sc-fig"><div class="painel">{figura}'
@@ -160,13 +160,13 @@ def figura_rolagem(figura, passos, leg, ui, dica=True):
 
 
 def sec_mapa(s, ui, aulas):
-    """Mapa da formação: degraus em colunas, exercícios de cada aula de prática, dependências e resultado."""
+    """Mapa da formaÃ§Ã£o: degraus em colunas, exercÃ­cios de cada aula de prÃ¡tica, dependÃªncias e resultado."""
     cols = []
     for i, d in enumerate(s["degraus"]):
         aula = next(a for a in aulas if a["slug"] == d["aula"])
         prat = next(x for x in aula["secoes"] if x["tipo"] == "pratica")
-        exs = "".join(f'<li><button type="button" class="mp-ex" data-ex="{d["aula"]}-{e["id"]}"><b>{e["titulo"].split(" · ")[0]}</b><span>{e["titulo"].split(" · ", 1)[-1]}</span>'
-                      f'<template><b>{e["titulo"]}</b> · {e.get("min", "")}<br/>{e["texto"]}<br/><span class="pq">{ui["pronto_quando"]}</span> {e["pronto"]}</template></button></li>'
+        exs = "".join(f'<li><button type="button" class="mp-ex" data-ex="{d["aula"]}-{e["id"]}"><b>{e["titulo"].split(" Â· ")[0]}</b><span>{e["titulo"].split(" Â· ", 1)[-1]}</span>'
+                      f'<template><b>{e["titulo"]}</b> Â· {e.get("min", "")}<br/>{e["texto"]}<br/><span class="pq">{ui["pronto_quando"]}</span> {e["pronto"]}</template></button></li>'
                       for e in prat["exercicios"])
         n_ex = len(prat["exercicios"])
         seta = f'<span class="mp-dep" aria-hidden="true">{ic("seta")}<small>{ui["pre_requisito"]}</small></span>' if i else ""
@@ -232,16 +232,16 @@ def sec_pratica(s, ui, slug):
 
 def sec_video(s, ui, curso, prefixo):
     v = curso["videos"][s["chave"]]
-    # 7.6.7: versão do vídeo por idioma — videos.<chave>.idiomas.<lang>.{mp4, vtt}; sem ela, o vídeo PT com legenda PT
+    # 7.6.7: versÃ£o do vÃ­deo por idioma â€” videos.<chave>.idiomas.<lang>.{mp4, vtt}; sem ela, o vÃ­deo PT com legenda PT
     loc = v.get("idiomas", {}).get(LANG, {})
     lg = LANG if loc.get("vtt") else "pt"
-    rot_leg = {"pt": "Português", "en": "English", "es": "Español"}.get(lg, lg)
-    # 7.10.12: vídeo vertical (short/reel) com "formato": "9:16" — player estreito e centrado, não pillarbox 16:9
+    rot_leg = {"pt": "PortuguÃªs", "en": "English", "es": "EspaÃ±ol"}.get(lg, lg)
+    # 7.10.12: vÃ­deo vertical (short/reel) com "formato": "9:16" â€” player estreito e centrado, nÃ£o pillarbox 16:9
     vert = " vertical" if v.get("formato") == "9:16" else ""
     return (f'<div class="video{vert}"><video controls preload="metadata" playsinline poster="{ativo(prefixo)}{img_idioma(v["poster"])}">'
             f'<source src="{loc.get("mp4", v["mp4"])}" type="video/mp4"/>'
             f'<track kind="subtitles" srclang="{lg}" label="{rot_leg}" src="{ativo(prefixo)}{loc.get("vtt", v["vtt"])}" default/></video>'
-            f'<div class="video-leg"><span><b>{v["titulo"]}</b> · {loc.get("duracao", v["duracao"])}</span><a href="{loc.get("pagina", v["pagina"])}" target="_blank" rel="noopener">{ui["video_pagina"]} →</a></div></div>')
+            f'<div class="video-leg"><span><b>{v["titulo"]}</b> Â· {loc.get("duracao", v["duracao"])}</span><a href="{loc.get("pagina", v["pagina"])}" target="_blank" rel="noopener">{ui["video_pagina"]} â†’</a></div></div>')
 
 
 def sec_simfila(s, ui):
@@ -257,18 +257,18 @@ def sec_simfila(s, ui):
             f'<p class="dg-legenda">{s["legenda"]}</p></div>')
 
 
-ST_UI = {  # 7.14.19: textos do simterm; ficam em curso.json → ui e podem ser trocados/traduzidos lá
-    "st_missoes": "Missões", "st_digite": "Digite o comando e tecle Enter", "st_dica": "Mostrar o comando",
-    "st_zerar": "Recomeçar", "st_missao": "Missão {n} de {t}:", "st_cumpridas": "Missões cumpridas.", "st_pronto": "Pronto.",
-    "st_onde": "Isso mostrou onde você está. Agora faça o que a missão {n} pede.",
-    "st_errado": "Esse não é o comando da missão {n}. Releia o pedido ou toque em <b>{dica}</b>."}
-PT_AULAS = {}  # slug → aula PT: no simterm, comandos e saídas vêm SEMPRE do PT (o aluno digita o mesmo comando em qualquer idioma)
+ST_UI = {  # 7.14.19: textos do simterm; ficam em curso.json â†’ ui e podem ser trocados/traduzidos lÃ¡
+    "st_missoes": "MissÃµes", "st_digite": "Digite o comando e tecle Enter", "st_dica": "Mostrar o comando",
+    "st_zerar": "RecomeÃ§ar", "st_missao": "MissÃ£o {n} de {t}:", "st_cumpridas": "MissÃµes cumpridas.", "st_pronto": "Pronto.",
+    "st_onde": "Isso mostrou onde vocÃª estÃ¡. Agora faÃ§a o que a missÃ£o {n} pede.",
+    "st_errado": "Esse nÃ£o Ã© o comando da missÃ£o {n}. Releia o pedido ou toque em <b>{dica}</b>."}
+PT_AULAS = {}  # slug â†’ aula PT: no simterm, comandos e saÃ­das vÃªm SEMPRE do PT (o aluno digita o mesmo comando em qualquer idioma)
 
 
 def sec_simterm(s, ui, pt):
     """7.14.19 (vindo do curso do-chat-ao-agente-terminal-v72): terminal simulado. O aluno digita o comando de cada
-    missão e vê a resposta, sem risco. Comportamento em assets/v72-simterm.js. Texto visível vem do JSON/ui (traduzível);
-    `pt` é a mesma seção no PT: dela saem inicio, sufixo, sistema e, por missão, aceita, vai e mostra."""
+    missÃ£o e vÃª a resposta, sem risco. Comportamento em assets/v72-simterm.js. Texto visÃ­vel vem do JSON/ui (traduzÃ­vel);
+    `pt` Ã© a mesma seÃ§Ã£o no PT: dela saem inicio, sufixo, sistema e, por missÃ£o, aceita, vai e mostra."""
     u = {k: ui.get(k, v) for k, v in ST_UI.items()}
     dados = {k: s.get(k) for k in ("erro", "fim")}
     dados.update({k: pt.get(k) for k in ("inicio", "sistema")})
@@ -297,9 +297,9 @@ def sec_simterm(s, ui, pt):
 
 
 def sec_simportao(s, ui):
-    """7.14.19 (vindo do curso do-chat-ao-agente-filas-v72): fluxo de várias fases que para no portão humano
-    (aprovar, reprovar com correção ou rodar sem portão). Comportamento em assets/v72-simportao.js. O portão é a fase 2
-    (índice 1). Texto visível vem do JSON: fases, rot, rascunho, corrigido, msg; `arquivo` = rótulo do texto gerado."""
+    """7.14.19 (vindo do curso do-chat-ao-agente-filas-v72): fluxo de vÃ¡rias fases que para no portÃ£o humano
+    (aprovar, reprovar com correÃ§Ã£o ou rodar sem portÃ£o). Comportamento em assets/v72-simportao.js. O portÃ£o Ã© a fase 2
+    (Ã­ndice 1). Texto visÃ­vel vem do JSON: fases, rot, rascunho, corrigido, msg; `arquivo` = rÃ³tulo do texto gerado."""
     r = s["rot"]
     fases = "".join(f'<li class="sp-fase" data-i="{i}">{ic("portao" if i == 1 else "alvo")}<span>{f}</span></li>'
                     for i, f in enumerate(s["fases"]))
@@ -315,17 +315,17 @@ def sec_simportao(s, ui):
             f'<p class="dg-legenda">{s["legenda"]}</p></div>')
 
 
-CONV_UI = {  # 7.5.1: textos da simconversa; ficam em curso.json → ui e podem ser trocados/traduzidos lá
-    "conv_dica": "Escolha a sua resposta. O comentário aparece logo depois e a conversa segue conforme a escolha.",
-    "conv_voce": "Você", "conv_escolha": "Sua resposta", "conv_boa": "Boa escolha", "conv_meio": "Dá para melhorar",
-    "conv_ruim": "Escolha fraca", "conv_fim": "Fim da conversa", "conv_placar": "Você fez {p} de {m} pontos possíveis.",
-    "conv_licao": "Lição:", "conv_recomecar": "Recomeçar a conversa", "conv_feita": "Seu melhor placar: {p} de {m} pontos.",
+CONV_UI = {  # 7.5.1: textos da simconversa; ficam em curso.json â†’ ui e podem ser trocados/traduzidos lÃ¡
+    "conv_dica": "Escolha a sua resposta. O comentÃ¡rio aparece logo depois e a conversa segue conforme a escolha.",
+    "conv_voce": "VocÃª", "conv_escolha": "Sua resposta", "conv_boa": "Boa escolha", "conv_meio": "DÃ¡ para melhorar",
+    "conv_ruim": "Escolha fraca", "conv_fim": "Fim da conversa", "conv_placar": "VocÃª fez {p} de {m} pontos possÃ­veis.",
+    "conv_licao": "LiÃ§Ã£o:", "conv_recomecar": "RecomeÃ§ar a conversa", "conv_feita": "Seu melhor placar: {p} de {m} pontos.",
 }
 
 
 def sec_simconversa(s, ui, conv_id):
-    """7.5.1: conversa com cliente simulado. O cliente fala, o aluno escolhe 1 de 2–4 respostas, vê o comentário,
-    o caminho segue conforme a escolha e termina com placar e lição. Comportamento em assets/v72-conversa.js."""
+    """7.5.1: conversa com cliente simulado. O cliente fala, o aluno escolhe 1 de 2â€“4 respostas, vÃª o comentÃ¡rio,
+    o caminho segue conforme a escolha e termina com placar e liÃ§Ã£o. Comportamento em assets/v72-conversa.js."""
     txt = {k: ui.get(k, v) for k, v in CONV_UI.items()}
     p = s["personagem"]
     dados = json.dumps({"inicio": s["inicio"], "falas": s["falas"], "licao": s.get("licao", ""), "nome": p["nome"], "txt": txt},
@@ -338,35 +338,35 @@ def sec_simconversa(s, ui, conv_id):
             f'<script type="application/json" class="conv-dados">{dados}</script></div>')
 
 
-CONF_UI = {  # 7.9.12: textos do conferidor; ficam em curso.json → ui (mesmos padrões de UI em conferir.py)
+CONF_UI = {  # 7.9.12: textos do conferidor; ficam em curso.json â†’ ui (mesmos padrÃµes de UI em conferir.py)
     "conf_vazio": "Cole o texto ou carregue o arquivo antes de conferir.",
-    "conf_falta": "Ainda não. O que falta:",
-    "conf_campo": "Falta a linha {c}: com a descrição (pelo menos {x} letras).",
-    "conf_planos": "Achei {n} planos numerados; o pedido é de {x} a {y}. Comece cada plano pelo número (1 | ...).",
+    "conf_falta": "Ainda nÃ£o. O que falta:",
+    "conf_campo": "Falta a linha {c}: com a descriÃ§Ã£o (pelo menos {x} letras).",
+    "conf_planos": "Achei {n} planos numerados; o pedido Ã© de {x} a {y}. Comece cada plano pelo nÃºmero (1 | ...).",
     "conf_no_plano": "Plano {i}: falta {g}.",
-    "conf_um_so": "Plano {i}: {n} escolhas de {g}; fique com uma só.",
-    "conf_variedade": "Só {n} tipo(s) diferente(s) de {g} nos planos; varie para pelo menos {x}.",
-    "conf_sem_duracao": "Plano {i}: falta a duração em segundos (ex.: 4 s).",
-    "conf_duracao": "Os planos somam {s} s; o pedido é de {x} a {y} s.",
+    "conf_um_so": "Plano {i}: {n} escolhas de {g}; fique com uma sÃ³.",
+    "conf_variedade": "SÃ³ {n} tipo(s) diferente(s) de {g} nos planos; varie para pelo menos {x}.",
+    "conf_sem_duracao": "Plano {i}: falta a duraÃ§Ã£o em segundos (ex.: 4 s).",
+    "conf_duracao": "Os planos somam {s} s; o pedido Ã© de {x} a {y} s.",
     "conf_termo": "Falta citar {g}.",
-    "conf_mais": "… e mais {n}.",
+    "conf_mais": "â€¦ e mais {n}.",
     "conf_rot": "Cole aqui o seu arquivo (ou carregue o .txt):",
     "conf_conferir": "Conferir", "conf_exemplo": "Exemplo que passa", "conf_errado": "Exemplo com erro",
     "conf_carregar": "Carregar .txt", "conf_baixar": "Baixar o arquivo", "conf_limpar": "Limpar",
-    # 7.12.15: modo vídeo (regra "video"): o navegador lê duração e tamanho do arquivo, sem enviar nada
-    "conf_video_dur": "O vídeo tem {s} s; o pedido é de {x} a {y} s.",
-    "conf_video_prop": "O vídeo é {w}×{h} ({p}); o pedido é {q}.",
-    "conf_video_larg": "O vídeo tem {w} px de largura; o mínimo é {x} px.",
-    "conf_video_ler": "Não consegui ler este vídeo. Exporte em MP4 (H.264) ou WebM e tente de novo.",
-    "conf_video_rot": "Escolha o seu vídeo. Ele é lido aqui no navegador: nada é enviado.",
-    "conf_video_escolher": "Escolher o vídeo", "conf_video_lendo": "Lendo o vídeo…",
+    # 7.12.15: modo vÃ­deo (regra "video"): o navegador lÃª duraÃ§Ã£o e tamanho do arquivo, sem enviar nada
+    "conf_video_dur": "O vÃ­deo tem {s} s; o pedido Ã© de {x} a {y} s.",
+    "conf_video_prop": "O vÃ­deo Ã© {w}Ã—{h} ({p}); o pedido Ã© {q}.",
+    "conf_video_larg": "O vÃ­deo tem {w} px de largura; o mÃ­nimo Ã© {x} px.",
+    "conf_video_ler": "NÃ£o consegui ler este vÃ­deo. Exporte em MP4 (H.264) ou WebM e tente de novo.",
+    "conf_video_rot": "Escolha o seu vÃ­deo. Ele Ã© lido aqui no navegador: nada Ã© enviado.",
+    "conf_video_escolher": "Escolher o vÃ­deo", "conf_video_lendo": "Lendo o vÃ­deoâ€¦",
 }
 
 
 def sec_conferidor_video(s, ui, conf_id, prefixo, txt):
-    """7.12.15: modo vídeo — o aluno escolhe o arquivo (input file) e a página lê duração, largura e altura
-    (loadedmetadata), sem enviar nada. Os exemplos são clipes do repo (video_ok, video_erro), em WebM para
-    tocar também no Chromium sem codecs proprietários. "pronto quando" cita a resposta (ex.: "OK: 8,0 s · 1920×1080 · 16:9")."""
+    """7.12.15: modo vÃ­deo â€” o aluno escolhe o arquivo (input file) e a pÃ¡gina lÃª duraÃ§Ã£o, largura e altura
+    (loadedmetadata), sem enviar nada. Os exemplos sÃ£o clipes do repo (video_ok, video_erro), em WebM para
+    tocar tambÃ©m no Chromium sem codecs proprietÃ¡rios. "pronto quando" cita a resposta (ex.: "OK: 8,0 s Â· 1920Ã—1080 Â· 16:9")."""
     dados = json.dumps({"regras": s["regras"], "ok": s["ok"], "video": True,
                         "video_ok": ativo(prefixo) + s["video_ok"], "video_erro": ativo(prefixo) + s["video_erro"],
                         "txt": txt}, ensure_ascii=False).replace("</", "<\\/")
@@ -383,9 +383,9 @@ def sec_conferidor_video(s, ui, conf_id, prefixo, txt):
 
 
 def sec_conferidor(s, ui, conf_id, prefixo=""):
-    """7.9.12: o aluno cola (ou carrega) o arquivo que escreveu e a página confere pelas regras da seção
+    """7.9.12: o aluno cola (ou carrega) o arquivo que escreveu e a pÃ¡gina confere pelas regras da seÃ§Ã£o
     (campos, planos, cada_plano, duracao, termos). "pronto quando" cita a resposta literal ("OK: ...").
-    Comportamento em assets/v72-conferidor.js; o mesmo motor em Python no conferir.py (opção de terminal)."""
+    Comportamento em assets/v72-conferidor.js; o mesmo motor em Python no conferir.py (opÃ§Ã£o de terminal)."""
     txt = {k: ui.get(k, v) for k, v in CONF_UI.items()}
     if any(r.get("tipo") == "video" for r in s["regras"]):
         return sec_conferidor_video(s, ui, conf_id, prefixo, txt)
@@ -407,7 +407,7 @@ def sec_conferidor(s, ui, conf_id, prefixo=""):
 
 
 def sec_quiz(s, ui, refs):
-    """refs: tipo de seção → (id, título), para o link "rever o conceito" de cada pergunta."""
+    """refs: tipo de seÃ§Ã£o â†’ (id, tÃ­tulo), para o link "rever o conceito" de cada pergunta."""
     itens = []
     letras = "ABCDE"
     n = len(s["perguntas"])
@@ -431,7 +431,7 @@ def sec_quiz(s, ui, refs):
 
 
 def minutos(txt):
-    """'10 min' → 10; '1 h' → 60; dias/noite/semana contam 30 min de trabalho (o resto é tempo de calendário)."""
+    """'10 min' â†’ 10; '1 h' â†’ 60; dias/noite/semana contam 30 min de trabalho (o resto Ã© tempo de calendÃ¡rio)."""
     m = re.match(r"(\d+)\s*(min|h)", txt or "")
     if m:
         return int(m.group(1)) * (60 if m.group(2) == "h" else 1)
@@ -439,7 +439,7 @@ def minutos(txt):
 
 
 def sec_gerador(s, ui, aulas):
-    """Gera o plano com datas a partir da data de início e das horas por semana (plano.md + .ics)."""
+    """Gera o plano com datas a partir da data de inÃ­cio e das horas por semana (plano.md + .ics)."""
     degraus = []
     for d in s["degraus"]:
         aula = next(a for a in aulas if a["slug"] == d["aula"])
@@ -472,7 +472,7 @@ def sec_links(s, ui):
     return '<div class="links">' + "".join(f'<a href="{l["href"]}" target="_blank" rel="noopener">{ic(l.get("icone", "seta"))}{l["t"]}</a>' for l in s["links"]) + "</div>"
 
 
-# ---------- página ----------
+# ---------- pÃ¡gina ----------
 def cabeca(titulo, desc, prefixo, lang, canon, curso_id, pag="", extra_css=()):
     at = ativo(prefixo)
     extra = "".join(f'\n<link rel="stylesheet" href="{at}assets/{c}"/>' for c in extra_css)
@@ -494,13 +494,13 @@ def cabeca(titulo, desc, prefixo, lang, canon, curso_id, pag="", extra_css=()):
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&family=Sora:wght@600;700;800&family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&display=swap" rel="stylesheet"/>
 <link rel="stylesheet" href="{at}assets/v71.css"/>
 <link rel="stylesheet" href="{at}assets/v72.css"/>{extra}
-<meta name="generator" content="INEMA Learning {VERSAO}"/>
+<meta name="generator" content="ARCKHÉ Learning {VERSAO}"/>
 <script>try{{if(JSON.parse(localStorage.getItem("{curso_id}:tema"))==="papel")document.documentElement.setAttribute("data-tema","papel")}}catch(e){{}}</script>
 </head>"""
 
 
 def topo(curso, aulas, ui, prefixo, atual=""):
-    """Menu do topo no padrão dos cursos INEMA (v2): curso | INEMA.CLUB - PRO à esquerda; uma entrada por aula e Aa à direita."""
+    """Menu do topo no padrÃ£o dos cursos ARCKHÉ (v2): curso | ARCKHÉ AI - PRO Ã  esquerda; uma entrada por aula e Aa Ã  direita."""
     links = "".join(
         f'<a href="{prefixo}aulas/{a["slug"]}/index.html" class="tlink{" on" if a["slug"] == atual else ""}"'
         f'{" aria-current=\"page\"" if a["slug"] == atual else ""} title="{attr(a["titulo"])}">'
@@ -509,7 +509,7 @@ def topo(curso, aulas, ui, prefixo, atual=""):
           f'<div class="aa-pop" id="aparencia" hidden><p>{ui["tema"]}</p><div class="aa-seg">'
           f'<button type="button" data-tema="escuro">{ui["tema_escuro"]}</button><button type="button" data-tema="papel">{ui["tema_papel"]}</button></div>'
           f'<p style="margin-top:12px">{ui["tamanho_texto"]}</p><div class="aa-seg">'
-          f'<button type="button" data-escala="0.9">A−</button><button type="button" data-escala="1">A</button><button type="button" data-escala="1.12">A+</button>'
+          f'<button type="button" data-escala="0.9">Aâˆ’</button><button type="button" data-escala="1">A</button><button type="button" data-escala="1.12">A+</button>'
           f'</div></div></div>')
     sol_lua = (f'<button type="button" class="tema-btn" title="{attr(ui.get("trocar_tema", "Trocar tema claro/escuro"))}">'
                f'{ic("sol", "ico sol")}{ic("lua", "ico lua")}<span class="sr">{ui.get("trocar_tema", "Trocar tema claro/escuro")}</span></button>')
@@ -522,8 +522,8 @@ def topo(curso, aulas, ui, prefixo, atual=""):
     return (f'<a class="skip" href="#conteudo">{ui["pular"]}</a><header class="topo"><div class="esq">'
             f'<button type="button" class="menu-btn" aria-expanded="false" aria-controls="lado">{ic("menu")}<span class="sr">{ui["aulas"]}</span></button>'
             f'<a class="marca" href="{prefixo}index.html">{ic(curso["icone"])}<span>{curso["nome"]}</span></a>'
-            f'<span class="sep">|</span><a class="club" href="https://inema.club" target="_blank" rel="noopener">INEMA.CLUB</a>'
-            f'<span class="tr">-</span><a class="pro" href="https://inema.pro" target="_blank" rel="noopener">PRO</a></div>'
+            f'<span class="sep">|</span><a class="club" href="https://ARCKHÉ AI" target="_blank" rel="noopener">ARCKHÉ AI</a>'
+            f'<span class="tr">-</span><a class="pro" href="https://ARCKHÉ.pro" target="_blank" rel="noopener">PRO</a></div>'
             f'<nav class="dir" aria-label="{attr(ui["aulas"])}">{links}{idiomas}{sol_lua}{aa}</nav></header>')
 
 
@@ -536,8 +536,8 @@ def sem_tags(t):
 
 
 def estudo(aulas, ui):
-    """v7.2: gaveta com desempenho nos testes, anotações e cópia dos dados (tudo no navegador).
-    Embute os testes de todas as aulas para a gaveta mostrar o que errou em qualquer página."""
+    """v7.2: gaveta com desempenho nos testes, anotaÃ§Ãµes e cÃ³pia dos dados (tudo no navegador).
+    Embute os testes de todas as aulas para a gaveta mostrar o que errou em qualquer pÃ¡gina."""
     T = ui["estudo"]
     dados = []
     for a in aulas:
@@ -575,7 +575,7 @@ def lado(curso, aulas, ui, prefixo, atual):
             f'<div class="ind"><span class="ind-rot">{ui["ind_pratica"]}</span><span class="prog-txt"><span data-prat>0</span>/{total_ex(aulas)}</span></div>'
             f'<div class="prog pratica" aria-hidden="true"><i></i></div><p class="ind-nota">{ui["ind_nota"]}</p>'
             f'<ol class="lista-aulas">{"".join(itens)}</ol>{estudo(aulas, ui)}'
-            f'<div class="lado-card">{card["rot"]}<b>{card["t"]}</b>{card["texto"]}<br/><a href="{href_lang(card)}" target="_blank" rel="noopener">{card["link"]} →</a></div></aside>')
+            f'<div class="lado-card">{card["rot"]}<b>{card["t"]}</b>{card["texto"]}<br/><a href="{href_lang(card)}" target="_blank" rel="noopener">{card["link"]} â†’</a></div></aside>')
 
 
 def rodape(curso):
@@ -617,11 +617,11 @@ def pagina_aula(curso, aulas, a, idx, ui, lang):
         elif t == "texto": corpo = sec_texto(s, ui)
         elif t == "resumo": corpo = sec_resumo(s, ui)
         elif t == "links": corpo = sec_links(s, ui)
-        else: raise SystemExit(f"tipo de seção desconhecido: {t} ({a['slug']})")
+        else: raise SystemExit(f"tipo de seÃ§Ã£o desconhecido: {t} ({a['slug']})")
         sub = f'<p>{s["sub"]}</p>' if s.get("sub") else ""
-        # diagrama preso no topo leva o título da seção junto (aparece quando o título original sobe)
-        corpo = corpo.replace('<div class="sc-fig">', f'<div class="sc-fig"><p class="sc-tit" aria-hidden="true"><span class="sc-aula">{ui.get("aula", "Aula")} {idx + 1}</span><span class="sn">{num:02d}</span><span class="sp"> · </span><span class="sc-t">{s["titulo"]}</span>' + (f'<span class="sc-sub">{s["sub"]}</span>' if s.get("sub") else '') + '</p>', 1)
-        secs.append(f'<section class="secao" id="s{num}"><div class="sec-cab"><div><h2><span class="sn">{num:02d}</span><span class="sp" aria-hidden="true"> · </span>{s["titulo"]}</h2>{sub}</div></div>{corpo}</section>')
+        # diagrama preso no topo leva o tÃ­tulo da seÃ§Ã£o junto (aparece quando o tÃ­tulo original sobe)
+        corpo = corpo.replace('<div class="sc-fig">', f'<div class="sc-fig"><p class="sc-tit" aria-hidden="true"><span class="sc-aula">{ui.get("aula", "Aula")} {idx + 1}</span><span class="sn">{num:02d}</span><span class="sp"> Â· </span><span class="sc-t">{s["titulo"]}</span>' + (f'<span class="sc-sub">{s["sub"]}</span>' if s.get("sub") else '') + '</p>', 1)
+        secs.append(f'<section class="secao" id="s{num}"><div class="sec-cab"><div><h2><span class="sn">{num:02d}</span><span class="sp" aria-hidden="true"> Â· </span>{s["titulo"]}</h2>{sub}</div></div>{corpo}</section>')
     prox = aulas[idx + 1] if idx + 1 < len(aulas) else None
     ant = aulas[idx - 1] if idx > 0 else None
     btn_prox = (f'<a class="btn" href="{prefixo}aulas/{prox["slug"]}/index.html">{ui["proxima_aula"]} {ic("seta")}</a>' if prox
@@ -636,8 +636,8 @@ def pagina_aula(curso, aulas, a, idx, ui, lang):
     nav_fim = (f'<div class="fim-aula">{btn_ant}'
                f'<button type="button" class="btn neutro concluir" aria-pressed="false">{ic("check")}{ui["marcar_concluida"]}</button>{btn_prox_cheio}</div>')
     canon = f'{curso["url"]}aulas/{a["slug"]}/'
-    titulo = f'{a["titulo"]} · {curso["nome"]} · INEMA'
-    # 7.5.1: arquivos de tipos opcionais entram só na aula que usa o tipo (curso antigo não precisa deles)
+    titulo = f'{a["titulo"]} Â· {curso["nome"]} Â· ARCKHÉ'
+    # 7.5.1: arquivos de tipos opcionais entram sÃ³ na aula que usa o tipo (curso antigo nÃ£o precisa deles)
     tipos = {x["tipo"] for x in a["secoes"]}
     extra = [n for t, n in (("simconversa", "v72-conversa"), ("conferidor", "v72-conferidor"),
                             ("simterm", "v72-simterm"), ("simportao", "v72-simportao")) if t in tipos]
@@ -649,9 +649,9 @@ def pagina_aula(curso, aulas, a, idx, ui, lang):
             + '<div class="casca">' + lado(curso, aulas, ui, prefixo, a["slug"])
             + f'<main class="principal" id="conteudo"><div class="miolo" data-competencias="{attr(";".join(a["competencias"]))}">'
             + f'<div class="aula-hero{" com-img" if fig else ""}"><div class="ah-txt"><nav class="pontos" aria-label="{attr(ui["aulas"])}">{pontos}</nav>'
-            + f'<p class="kicker">{ui["aula"]} {a["num"]} · {a["minutos"]} min</p><h1>{a["titulo"]}</h1><p class="lead">{a["lead"]}</p>'
-            + f'<a class="comecar" href="#s1">{ui.get("comecar", "Começar a aula")} {ic("seta")}</a></div>{fig}</div>'
-            + f'<div class="nesta2"><h2>{ui.get("nesta_vai", "Nesta aula você vai")}</h2><ol>{aprende}</ol><p class="objetivo"><b>{ui["objetivo"]}</b> {a["objetivo"]}</p></div>'
+            + f'<p class="kicker">{ui["aula"]} {a["num"]} Â· {a["minutos"]} min</p><h1>{a["titulo"]}</h1><p class="lead">{a["lead"]}</p>'
+            + f'<a class="comecar" href="#s1">{ui.get("comecar", "ComeÃ§ar a aula")} {ic("seta")}</a></div>{fig}</div>'
+            + f'<div class="nesta2"><h2>{ui.get("nesta_vai", "Nesta aula vocÃª vai")}</h2><ol>{aprende}</ol><p class="objetivo"><b>{ui["objetivo"]}</b> {a["objetivo"]}</p></div>'
             + "".join(secs) + nav_fim + rodape(curso)
             + f'</div></main></div><script src="{ativo(prefixo)}assets/v71.js"></script><script src="{ativo(prefixo)}assets/v72.js"></script>{js_extra}</body></html>\n')
 
@@ -659,21 +659,21 @@ def pagina_aula(curso, aulas, a, idx, ui, lang):
 def pagina_inicio(curso, aulas, ui, lang):
     p = curso["inicio"]
     prefixo = ""
-    # v7.2: mesma direção das aulas — abertura com foto que funde no fundo, aulas como lista editorial com foto
+    # v7.2: mesma direÃ§Ã£o das aulas â€” abertura com foto que funde no fundo, aulas como lista editorial com foto
     lista = "".join(f'<li><a class="ini-aula" data-slug="{a["slug"]}" href="aulas/{a["slug"]}/index.html">'
                     f'<span class="ia-img"><img src="{ativo(prefixo)}{img_idioma(f'assets/img/hero/{a["slug"]}.jpg')}" alt="" loading="lazy" width="1536" height="1024"/></span>'
-                    f'<span class="ia-txt"><span class="kicker">{ui["aula"]} {a["num"]} · {a["minutos"]} min<span class="ia-ok" aria-hidden="true">{ic("check")}</span></span>'
+                    f'<span class="ia-txt"><span class="kicker">{ui["aula"]} {a["num"]} Â· {a["minutos"]} min<span class="ia-ok" aria-hidden="true">{ic("check")}</span></span>'
                     f'<span class="ia-t">{a["titulo"]}</span><span class="ia-l">{a["lead"]}</span></span></a></li>' for a in aulas)
     numeros = "".join(f'<li><b>{n["v"]}</b><span>{n["t"]}</span></li>' for n in p["numeros"])
     duas = "".join(f'<div><h2>{b["t"]}</h2><ol>{"".join(f"<li><span class=dn>{i + 1}</span><span>{x}</span></li>" for i, x in enumerate(b["itens"]))}</ol></div>' for b in p["blocos"])
     pontos = "".join(f'<a href="aulas/{x["slug"]}/index.html" class="pt" data-slug="{x["slug"]}" title="{attr(x["titulo"])}"><span class="sr">{x["titulo"]}</span></a>' for x in aulas)
-    # 7.5.4: inicio.cursos (opcional) — cartões para os cursos completos de uma formação, logo depois dos números.
-    # href_idioma: true → em en/ e es/ o link vai para <href><lang>/ (curso irmão também traduzido)
+    # 7.5.4: inicio.cursos (opcional) â€” cartÃµes para os cursos completos de uma formaÃ§Ã£o, logo depois dos nÃºmeros.
+    # href_idioma: true â†’ em en/ e es/ o link vai para <href><lang>/ (curso irmÃ£o tambÃ©m traduzido)
     cursos = ""
     if p.get("cursos"):
         cs = p["cursos"]
         def href(c):
-            # 7.8.12: idempotente — o traduzir.py 7.8.11 já grava <href><lang>/ em conteudo/<lang>/
+            # 7.8.12: idempotente â€” o traduzir.py 7.8.11 jÃ¡ grava <href><lang>/ em conteudo/<lang>/
             if LANG == "pt" or not c.get("href_idioma") or c["href"].endswith(f"/{LANG}/"):
                 return c["href"]
             return c["href"] + f"{LANG}/"
@@ -683,7 +683,7 @@ def pagina_inicio(curso, aulas, ui, lang):
                             f'<span class="ia-txt"><span class="kicker">{c["rot"]}</span><span class="ia-t">{c["t"]}</span><span class="ia-l">{c["l"]}</span>'
                             f'<span class="ic-ir">{cs["abrir"]} {ic("seta")}</span></span></a></li>' for c in cs["itens"])
                   + '</ol></section>')
-    return (cabeca(f'{curso["nome"]} · INEMA', p["lead"], prefixo, lang, curso["url"], id_curso(curso))
+    return (cabeca(f'{curso["nome"]} Â· ARCKHÉ', p["lead"], prefixo, lang, curso["url"], id_curso(curso))
             + f'<body class="inicio" data-curso="{id_curso(curso)}" data-total="{len(aulas)}" data-total-ex="{total_ex(aulas)}">' + topo(curso, aulas, ui, prefixo)
             + '<div class="casca">' + lado(curso, aulas, ui, prefixo, "")
             + '<main class="principal" id="conteudo"><div class="miolo">'

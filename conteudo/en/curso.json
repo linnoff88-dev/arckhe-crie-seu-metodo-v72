@@ -1,12 +1,12 @@
 {
   "id": "crie-seu-metodo-v72",
   "lang": "en",
-  "url": "https://inematds.github.io/crie-seu-metodo-v72/en/",
+  "url": "https://linnoff88-dev.github.io/
   "nome": "Build your method",
   "sub": "Stop polishing the tool",
   "volta": {
-    "t": "INEMA.CLUB",
-    "href": "https://inema.club/"
+    "t": "ARCKHÉ AI",
+    "href": "https://ARCKHÉ AI/"
   },
   "lado_card": {
     "rot": "Core idea",
@@ -15,12 +15,12 @@
     "link": "Start with lesson 5",
     "href": "aulas/metodo/"
   },
-  "rodape": "INEMA.CLUB · open and free content · INEMA Learning v7.2 format · <a href=\"https://inema.club/\">inema.club</a> · <a href=\"https://www.inema.club/cursos/386-crie-seu-metodo-gestao-com-agentes-e-o-metodo-que-vale-mais-que-o-software/\">Full course page on INEMA.CLUB</a> · <a href=\"https://www.inema.club/aprender-inteligencia-artificial/\">Guide: how to learn artificial intelligence</a>",
+  "rodape": "ARCKHÉ AI Â· open and free content Â· ARCKHÉ Learning v7.2 format Â· <a href=\"https://ARCKHÉ AI/\">ARCKHÉ AI</a> Â· <a href=\"https://www.ARCKHÉ AI/cursos/386-crie-seu-metodo-gestao-com-agentes-e-o-metodo-que-vale-mais-que-o-software/\">Full course page on ARCKHÉ AI</a> Â· <a href=\"https://www.ARCKHÉ AI/aprender-inteligencia-artificial/\">Guide: how to learn artificial intelligence</a>",
   "videos": {
     "csm-a2": {
       "titulo": "Lesson 2 on video",
       "duracao": "2 min 38 s",
-      "mp4": "https://github.com/inematds/crie-seu-metodo-v72/releases/download/video-v1.0.0/csm-a2.mp4",
+      "mp4": "https://github.com/linnoff88-dev/crie-seu-metodo-v72/releases/download/video-v1.0.0/csm-a2.mp4",
       "vtt": "assets/vtt/csm-a2.vtt",
       "poster": "assets/img/videos/csm-a2.jpg",
       "pagina": "https://www.youtube.com/watch?v=YLVpQ9-umAk"
@@ -28,7 +28,7 @@
     "csm-a3": {
       "titulo": "Lesson 3 on video",
       "duracao": "2 min 22 s",
-      "mp4": "https://github.com/inematds/crie-seu-metodo-v72/releases/download/video-v1.0.0/csm-a3.mp4",
+      "mp4": "https://github.com/linnoff88-dev/crie-seu-metodo-v72/releases/download/video-v1.0.0/csm-a3.mp4",
       "vtt": "assets/vtt/csm-a3.vtt",
       "poster": "assets/img/videos/csm-a3.jpg",
       "pagina": "https://www.youtube.com/watch?v=NVNpwNvoUR8"
@@ -36,7 +36,7 @@
     "csm-a4": {
       "titulo": "Lesson 4 on video",
       "duracao": "2 min 30 s",
-      "mp4": "https://github.com/inematds/crie-seu-metodo-v72/releases/download/video-v1.0.0/csm-a4.mp4",
+      "mp4": "https://github.com/linnoff88-dev/crie-seu-metodo-v72/releases/download/video-v1.0.0/csm-a4.mp4",
       "vtt": "assets/vtt/csm-a4.vtt",
       "poster": "assets/img/videos/csm-a4.jpg",
       "pagina": "https://www.youtube.com/watch?v=3Qk8oKy6Pbk"
@@ -44,7 +44,7 @@
     "csm-a5": {
       "titulo": "Lesson 5 on video",
       "duracao": "2 min 30 s",
-      "mp4": "https://github.com/inematds/crie-seu-metodo-v72/releases/download/video-v1.0.0/csm-a5.mp4",
+      "mp4": "https://github.com/linnoff88-dev/crie-seu-metodo-v72/releases/download/video-v1.0.0/csm-a5.mp4",
       "vtt": "assets/vtt/csm-a5.vtt",
       "poster": "assets/img/videos/csm-a5.jpg",
       "pagina": "https://www.youtube.com/watch?v=_nwt2gZqeLM"
@@ -52,7 +52,7 @@
     "csm-a6": {
       "titulo": "Lesson 6 on video",
       "duracao": "2 min 16 s",
-      "mp4": "https://github.com/inematds/crie-seu-metodo-v72/releases/download/video-v1.0.0/csm-a6.mp4",
+      "mp4": "https://github.com/linnoff88-dev/crie-seu-metodo-v72/releases/download/video-v1.0.0/csm-a6.mp4",
       "vtt": "assets/vtt/csm-a6.vtt",
       "poster": "assets/img/videos/csm-a6.jpg",
       "pagina": "https://www.youtube.com/watch?v=MOi5YX8CHSM"
@@ -60,7 +60,7 @@
     "csm-a7": {
       "titulo": "Lesson 7 on video",
       "duracao": "2 min 24 s",
-      "mp4": "https://github.com/inematds/crie-seu-metodo-v72/releases/download/video-v1.0.0/csm-a7.mp4",
+      "mp4": "https://github.com/linnoff88-dev/crie-seu-metodo-v72/releases/download/video-v1.0.0/csm-a7.mp4",
       "vtt": "assets/vtt/csm-a7.vtt",
       "poster": "assets/img/videos/csm-a7.jpg",
       "pagina": "https://www.youtube.com/watch?v=GQXN8HxNkRw"
@@ -68,7 +68,7 @@
     "csm-visao": {
       "titulo": "The whole course on video",
       "duracao": "2 min 47 s",
-      "mp4": "https://github.com/inematds/crie-seu-metodo-v72/releases/download/video-v1.0.0/csm-visao.mp4",
+      "mp4": "https://github.com/linnoff88-dev/crie-seu-metodo-v72/releases/download/video-v1.0.0/csm-visao.mp4",
       "vtt": "assets/vtt/csm-visao.vtt",
       "poster": "assets/img/videos/csm-visao.jpg",
       "pagina": "https://www.youtube.com/watch?v=pp_3giDnS1w"
@@ -76,14 +76,14 @@
     "csm-a1": {
       "titulo": "Lesson 1 on video",
       "duracao": "2 min 14 s",
-      "mp4": "https://github.com/inematds/crie-seu-metodo-v72/releases/download/video-v1.0.0/csm-a1.mp4",
+      "mp4": "https://github.com/linnoff88-dev/crie-seu-metodo-v72/releases/download/video-v1.0.0/csm-a1.mp4",
       "vtt": "assets/vtt/csm-a1.vtt",
       "poster": "assets/img/videos/csm-a1.jpg",
       "pagina": "https://www.youtube.com/watch?v=9D1ANpJugn4"
     }
   },
   "inicio": {
-    "kicker": "Course · 7 lessons · management with agents and method",
+    "kicker": "Course Â· 7 lessons Â· management with agents and method",
     "titulo": "If the next AI wipes out your work, you were polishing the tool",
     "lead": "Stop selling automation. Start selling method. In seven hands-on lessons, you put agents between you and your team, build an assistant that only acts with your confirmation, organize agents by function, and package your lead-generation method so you can repeat it in any business.",
     "cta": "Start with lesson 1",
@@ -212,13 +212,13 @@
       "salvar": "Save",
       "apagar": "Remove highlight",
       "fechar": "Close",
-      "nota_ph": "Write your note about this passage…",
+      "nota_ph": "Write your note about this passageâ€¦",
       "um_bloco": "Highlight within a single paragraph only.",
       "nao_marca": "This passage can't be highlighted.",
       "dados_exp": "Your progress, your notes and your test scores stay only in this browser. Download a copy (.json) to keep it or to continue on another computer or browser; there, load the copy. Loading adds to what already exists and doesn't delete anything.",
       "exportar": "Download copy",
       "importar": "Load copy",
-      "import_ok": "Copy loaded ({n} items). Refreshing the page…",
+      "import_ok": "Copy loaded ({n} items). Refreshing the pageâ€¦",
       "import_erro": "File not recognized. Nothing was changed.",
       "import_outro": "This copy is from a different course. Nothing was changed.",
       "export_ok": "Copy downloaded."
@@ -247,7 +247,7 @@
     "conf_sem_duracao": "Plan {i}: duration in seconds is missing (e.g., 4 s).",
     "conf_duracao": "The plans add up to {s} s; the request is {x} to {y} s.",
     "conf_termo": "{g} is missing.",
-    "conf_mais": "… and {n} more.",
+    "conf_mais": "â€¦ and {n} more.",
     "conf_rot": "Paste your file here (or upload the .txt):",
     "conf_conferir": "Check",
     "conf_exemplo": "Example that passes",
@@ -256,12 +256,12 @@
     "conf_baixar": "Download the file",
     "conf_limpar": "Clear",
     "conf_video_dur": "The video is {s} s long; the request is {x} to {y} s.",
-    "conf_video_prop": "The video is {w}×{h} ({p}); the request is {q}.",
+    "conf_video_prop": "The video is {w}Ã—{h} ({p}); the request is {q}.",
     "conf_video_larg": "The video is {w} px wide; the minimum is {x} px.",
     "conf_video_ler": "I couldn't read this video. Export it as MP4 (H.264) or WebM and try again.",
     "conf_video_rot": "Choose your video. It's read here in your browser: nothing is uploaded.",
     "conf_video_escolher": "Choose the video",
-    "conf_video_lendo": "Reading the video…"
+    "conf_video_lendo": "Reading the videoâ€¦"
   },
   "icone": "camadas"
 }

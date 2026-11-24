@@ -1,4 +1,4 @@
-﻿# Crie seu mÃ©todo
+# Crie seu mÃ©todo
 
 <div align="center">
   <img src="capa/logo.svg" alt="Arckhé AI" height="48" />
@@ -8,11 +8,11 @@
 
 **Se a prÃ³xima IA apaga seu trabalho, vocÃª estava polindo a ferramenta.** Pare de vender automaÃ§Ã£o. Comece a vender mÃ©todo.
 
-Curso aberto e gratuito do INEMA.CLUB em 7 aulas prÃ¡ticas, no formato INEMA Learning v7.2, em portuguÃªs, inglÃªs e espanhol.
+Curso aberto e gratuito do ARCKHÉ AI em 7 aulas prÃ¡ticas, no formato ARCKHÉ Learning v7.2, em portuguÃªs, inglÃªs e espanhol.
 
-- PT: https://inematds.github.io/crie-seu-metodo-v72/
-- EN: https://inematds.github.io/crie-seu-metodo-v72/en/
-- ES: https://inematds.github.io/crie-seu-metodo-v72/es/
+- PT: https://linnoff88-dev.github.io/
+- EN: https://linnoff88-dev.github.io/
+- ES: https://linnoff88-dev.github.io/
 
 ## As aulas
 
@@ -35,21 +35,21 @@ python3 gerar.py && python3 gerar.py --lang en && python3 gerar.py --lang es
 python3 validar.py --links
 ```
 
-## Mais no INEMA.CLUB
+## Mais no ARCKHÉ AI
 
-- [Ficha completa deste curso](https://www.inema.club/cursos/386-crie-seu-metodo-gestao-com-agentes-e-o-metodo-que-vale-mais-que-o-software/)
-- [Guia: como aprender inteligÃªncia artificial](https://www.inema.club/aprender-inteligencia-artificial/)
-- [Todos os cursos](https://www.inema.club/cursos/)
+- [Ficha completa deste curso](https://www.ARCKHÉ AI/cursos/386-crie-seu-metodo-gestao-com-agentes-e-o-metodo-que-vale-mais-que-o-software/)
+- [Guia: como aprender inteligÃªncia artificial](https://www.ARCKHÉ AI/aprender-inteligencia-artificial/)
+- [Todos os cursos](https://www.ARCKHÉ AI/cursos/)
 
 ---
 
 ## English
 
-**If the next AI wipes out your work, you were polishing the tool.** A free 7-lesson INEMA.CLUB course on running a company with agents and packaging a repeatable method: https://inematds.github.io/crie-seu-metodo-v72/en/
+**If the next AI wipes out your work, you were polishing the tool.** A free 7-lesson ARCKHÉ AI course on running a company with agents and packaging a repeatable method: https://linnoff88-dev.github.io/
 
 ## EspaÃ±ol
 
-**Si la prÃ³xima IA borra tu trabajo, estabas puliendo la herramienta.** Curso gratuito de INEMA.CLUB en 7 clases para gestionar la empresa con agentes y empaquetar un mÃ©todo repetible: https://inematds.github.io/crie-seu-metodo-v72/es/
+**Si la prÃ³xima IA borra tu trabajo, estabas puliendo la herramienta.** Curso gratuito de ARCKHÉ AI en 7 clases para gestionar la empresa con agentes y empaquetar un mÃ©todo repetible: https://linnoff88-dev.github.io/
 
 ---
 
