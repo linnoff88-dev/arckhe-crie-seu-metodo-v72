@@ -1,4 +1,4 @@
-/* ARCKHÉ Learning v7.1 â€” interaÃ§Ãµes (sem dependÃªncias). Nenhum texto visÃ­vel fica aqui: tudo vem do HTML. */
+/* ARCKHê Learning v7.1 ê¢â¬â interaêÂ§êÂµes (sem dependêÂªncias). Nenhum texto visêÂ­vel fica aqui: tudo vem do HTML. */
 (function () {
   "use strict";
   var CURSO = document.body.getAttribute("data-curso") || "curso";
@@ -38,7 +38,7 @@
     document.querySelectorAll(".mp-feitos").forEach(function (el) {
       var a = el.getAttribute("data-aula"), c = 0;
       Object.keys(f).forEach(function (k) { if (k.indexOf(a + "-") === 0) c++; });
-      el.textContent = c ? "Â· " + c + "/" + el.getAttribute("data-n") : "";
+      el.textContent = c ? "êÂ· " + c + "/" + el.getAttribute("data-n") : "";
     });
   }
   function marcar(valor) {
@@ -83,7 +83,7 @@
   });
   document.addEventListener("keydown", function (e) { if (e.key === "Escape") document.body.classList.remove("lado-aberto"); });
 
-  /* diagrama: clicar num nÃ³ mostra o detalhe */
+  /* diagrama: clicar num nêÂ³ mostra o detalhe */
   document.querySelectorAll(".dg-bloco:not(.scrolly)").forEach(function (bloco) {
     var det = bloco.querySelector(".dg-detalhe");
     var nos = bloco.querySelectorAll(".dg-no");
@@ -97,7 +97,7 @@
     });
   });
 
-  /* rolagem guiada: o diagrama fica fixo e a legenda dentro do painel troca a cada etapa; clicar num bloco leva Ã  etapa dele */
+  /* rolagem guiada: o diagrama fica fixo e a legenda dentro do painel troca a cada etapa; clicar num bloco leva êÂ  etapa dele */
   document.querySelectorAll(".scrolly").forEach(function (sc) {
     var fig = sc.querySelector(".sc-fig");
     var cap = sc.querySelector(".sc-cap");
@@ -116,7 +116,7 @@
       if (col) col.classList.remove("aberto");
       sc.classList.toggle("fixo", cabe);
       fig.classList.toggle("solto", !cabe);
-      /* altura travada: abrir coluna ou trocar legenda nÃ£o empurra as etapas durante a rolagem */
+      /* altura travada: abrir coluna ou trocar legenda nêÂ£o empurra as etapas durante a rolagem */
       fig.style.minHeight = cabe ? alto + "px" : "";
     }
     function legenda(html) {
@@ -174,7 +174,7 @@
     });
   });
 
-  /* abas genÃ©ricas: passos e saÃ­da */
+  /* abas genêÂ©ricas: passos e saêÂ­da */
   function abas(grupoSel, tabSel, painelAttr) {
     document.querySelectorAll(grupoSel).forEach(function (g) {
       var tabs = g.querySelectorAll(tabSel);
@@ -207,14 +207,14 @@
     });
   });
 
-  /* exercÃ­cios: marcar feito */
+  /* exercêÂ­cios: marcar feito */
   document.querySelectorAll(".exc input[type=checkbox]").forEach(function (c) {
     var k = "ex:" + c.getAttribute("data-id");
     c.checked = !!ler(k, false);
     c.addEventListener("change", function () { gravar(k, c.checked); pintarPratica(); });
   });
 
-  /* quiz: resposta sÃ³ aparece depois da tentativa; no fim, refazer tudo ou revisar sÃ³ as erradas */
+  /* quiz: resposta sêÂ³ aparece depois da tentativa; no fim, refazer tudo ou revisar sêÂ³ as erradas */
   document.querySelectorAll(".quiz").forEach(function (qz) {
     var perguntas = Array.prototype.slice.call(qz.querySelectorAll(".q-item"));
     var fb = qz.querySelector(".q-fb"), prox = qz.querySelector(".q-prox");
@@ -255,7 +255,7 @@
     comeca(perguntas.map(function (_, k) { return k; }));
   });
 
-  /* simulaÃ§Ã£o da fila caseira: entrada â†’ rodando â†’ feito / falhou; Ctrl+C deixa a tarefa em "rodando" e a prÃ³xima rodada a devolve para a entrada */
+  /* simulaêÂ§êÂ£o da fila caseira: entrada ê¢â â rodando ê¢â â feito / falhou; Ctrl+C deixa a tarefa em "rodando" e a prêÂ³xima rodada a devolve para a entrada */
   document.querySelectorAll(".simfila").forEach(function (sim) {
     var col = function (n) { return sim.querySelector('[data-col="' + n + '"] .itens'); };
     var cols = { entrada: col("entrada"), rodando: col("rodando"), feito: col("feito"), falhou: col("falhou") };
@@ -300,13 +300,13 @@
     sim.querySelector('[data-acao="zerar"]').addEventListener("click", reiniciar);
     reiniciar();
   });
-  /* gerador do plano: data de inÃ­cio + horas por semana â†’ plano.md e .ics */
+  /* gerador do plano: data de inêÂ­cio + horas por semana ê¢â â plano.md e .ics */
   document.querySelectorAll(".gerador").forEach(function (g) {
     var D = JSON.parse(g.getAttribute("data-plano")), T = D.txt;
     var ini = g.querySelector(".ger-ini"), hs = g.querySelector(".ger-h");
     var hoje = new Date(); ini.value = ler("plano-ini", hoje.toISOString().slice(0, 10)); hs.value = ler("plano-h", hs.value);
     var ultimo = null;
-    /* 7.14.19: data no padrÃ£o do idioma da pÃ¡gina (en: mm/dd; pt/es: dd/mm) */
+    /* 7.14.19: data no padrêÂ£o do idioma da pêÂ¡gina (en: mm/dd; pt/es: dd/mm) */
     var EN = /^en/i.test(document.documentElement.lang || "");
     function fmt(d) { var dd = ("0" + d.getDate()).slice(-2), mm = ("0" + (d.getMonth() + 1)).slice(-2); return EN ? mm + "/" + dd : dd + "/" + mm; }
     function ymd(d) { return d.getFullYear() + ("0" + (d.getMonth() + 1)).slice(-2) + ("0" + d.getDate()).slice(-2); }
@@ -314,7 +314,7 @@
     function gera() {
       var p = ini.value.split("-"), inicio = new Date(+p[0], +p[1] - 1, +p[2]);
       var h = parseInt(hs.value, 10), porDia = h * 60 / 7, dia = 0, usado = 0, md = [], cal = [], semanas = [];
-      md.push("# " + T.titulo, "", T.inicio + ": " + fmt(inicio) + " Â· " + T.ritmo + ": " + h + " " + T.h, "");
+      md.push("# " + T.titulo, "", T.inicio + ": " + fmt(inicio) + " êÂ· " + T.ritmo + ": " + h + " " + T.h, "");
       D.degraus.forEach(function (dg) {
         var linhas = [], fim = null;
         dg.ex.forEach(function (e) {
@@ -323,7 +323,7 @@
           var comeco = soma(inicio, dia), termina = soma(inicio, dia + e.dias - 1);
           if (e.dias > 1) { dia += e.dias - 1; usado = porDia; }
           fim = termina;
-          linhas.push("- [ ] " + fmt(comeco) + (e.dias > 1 ? "â€“" + fmt(termina) : "") + " Â· " + e.t + " (" + e.rot + ") â€” " + T.pronto + ": " + e.pronto);
+          linhas.push("- [ ] " + fmt(comeco) + (e.dias > 1 ? "ê¢â¬â" + fmt(termina) : "") + " êÂ· " + e.t + " (" + e.rot + ") ê¢â¬â " + T.pronto + ": " + e.pronto);
           cal.push({ t: e.t, ini: comeco, fim: termina, d: T.pronto + ": " + e.pronto });
         });
         md.push("## " + dg.t + " (" + T.ate + " " + fmt(fim) + ")"); md = md.concat(linhas); md.push("");
@@ -334,7 +334,7 @@
       md.push(T.travou, "- ");
       g.querySelector(".ger-md").textContent = md.join("\n");
       g.querySelector(".ger-resumo").innerHTML = "<div><small>" + T.inicio + "</small><b>" + fmt(inicio) + "</b></div><div><small>" + T.ritmo + "</small><b>" + h + " " + T.h + "</b></div><div><small>" + T.termino + "</small><b>" + fmt(termino) + "</b></div><div><small>" + T.semanas + "</small><b>" + nsem + "</b></div>";
-      g.querySelector(".ger-semanas").innerHTML = semanas.map(function (s, i) { return "<li><b>" + s.t + "</b><span>" + s.n + " " + (s.n === 1 && T.ex1 ? T.ex1 : T.exs) + " Â· " + T.ate + " " + fmt(s.fim) + "</span></li>"; }).join("");
+      g.querySelector(".ger-semanas").innerHTML = semanas.map(function (s, i) { return "<li><b>" + s.t + "</b><span>" + s.n + " " + (s.n === 1 && T.ex1 ? T.ex1 : T.exs) + " êÂ· " + T.ate + " " + fmt(s.fim) + "</span></li>"; }).join("");
       ultimo = { md: md.join("\n"), cal: cal };
       g.querySelector(".ger-res").hidden = false;
       gravar("plano-ini", ini.value); gravar("plano-h", hs.value);
@@ -345,8 +345,8 @@
     g.querySelector(".ger-baixa-ics").addEventListener("click", function () {
       if (!ultimo) return;
       var esc = function (t) { return t.replace(/[,;\\]/g, "\\$&"); };
-      var L = ["BEGIN:VCALENDAR", "VERSION:2.0", "PRODID:-//ARCKHÉ//" + D.curso + "//PT"];
-      ultimo.cal.forEach(function (c, i) { L.push("BEGIN:VEVENT", "UID:" + ymd(c.ini) + "-" + i + "@ARCKHÉ", "DTSTAMP:" + ymd(new Date()) + "T000000Z", "DTSTART;VALUE=DATE:" + ymd(c.ini), "DTEND;VALUE=DATE:" + ymd(soma(c.fim, 1)), "SUMMARY:" + esc(D.curso + " Â· " + c.t), "DESCRIPTION:" + esc(c.d), "END:VEVENT"); });
+      var L = ["BEGIN:VCALENDAR", "VERSION:2.0", "PRODID:-//ARCKHê//" + D.curso + "//PT"];
+      ultimo.cal.forEach(function (c, i) { L.push("BEGIN:VEVENT", "UID:" + ymd(c.ini) + "-" + i + "@ARCKHê", "DTSTAMP:" + ymd(new Date()) + "T000000Z", "DTSTART;VALUE=DATE:" + ymd(c.ini), "DTEND;VALUE=DATE:" + ymd(soma(c.fim, 1)), "SUMMARY:" + esc(D.curso + " êÂ· " + c.t), "DESCRIPTION:" + esc(c.d), "END:VEVENT"); });
       L.push("END:VCALENDAR");
       baixa("plano-" + (document.body.dataset.curso || "curso") + ".ics", "text/calendar", L.join("\r\n"));
     });

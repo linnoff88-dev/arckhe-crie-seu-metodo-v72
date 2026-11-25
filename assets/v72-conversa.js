@@ -1,7 +1,7 @@
-/* ARCKHÉ Learning 7.5.1 â€” simconversa: conversa com cliente simulado.
-   O cliente fala, o aluno escolhe uma de 2â€“4 respostas, vÃª o comentÃ¡rio e o caminho segue conforme a escolha.
-   No fim: placar (pontos do caminho / melhor caminho possÃ­vel), liÃ§Ã£o e "recomeÃ§ar".
-   Grava a conclusÃ£o em localStorage "<data-curso>:conv:<slug>-s<N>". Todo texto vem do JSON (ui do curso). */
+/* ARCKHê Learning 7.5.1 ê¢â¬â simconversa: conversa com cliente simulado.
+   O cliente fala, o aluno escolhe uma de 2ê¢â¬â4 respostas, vêÂª o comentêÂ¡rio e o caminho segue conforme a escolha.
+   No fim: placar (pontos do caminho / melhor caminho possêÂ­vel), liêÂ§êÂ£o e "recomeêÂ§ar".
+   Grava a conclusêÂ£o em localStorage "<data-curso>:conv:<slug>-s<N>". Todo texto vem do JSON (ui do curso). */
 (function () {
   var CURSO = document.body.getAttribute("data-curso") || "curso";
   function ler(k) { try { var v = localStorage.getItem(CURSO + ":" + k); return v === null ? null : JSON.parse(v); } catch (e) { return null; } }
@@ -21,7 +21,7 @@
     var log = box.querySelector(".conv-log"), ops = box.querySelector(".conv-ops"), fim = box.querySelector(".conv-fim");
     var pts = box.querySelector(".conv-pts");
 
-    // melhor pontuaÃ§Ã£o possÃ­vel a partir de cada fala (o validador garante que nÃ£o hÃ¡ laÃ§o)
+    // melhor pontuaêÂ§êÂ£o possêÂ­vel a partir de cada fala (o validador garante que nêÂ£o hêÂ¡ laêÂ§o)
     var memo = {};
     function melhor(fid) {
       if (memo[fid] != null) return memo[fid];

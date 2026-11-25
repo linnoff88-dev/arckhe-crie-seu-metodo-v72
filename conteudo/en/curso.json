@@ -256,7 +256,7 @@
     "conf_baixar": "Download the file",
     "conf_limpar": "Clear",
     "conf_video_dur": "The video is {s} s long; the request is {x} to {y} s.",
-    "conf_video_prop": "The video is {w}Ã—{h} ({p}); the request is {q}.",
+    "conf_video_prop": "The video is {w}ê—{h} ({p}); the request is {q}.",
     "conf_video_larg": "The video is {w} px wide; the minimum is {x} px.",
     "conf_video_ler": "I couldn't read this video. Export it as MP4 (H.264) or WebM and try again.",
     "conf_video_rot": "Choose your video. It's read here in your browser: nothing is uploaded.",

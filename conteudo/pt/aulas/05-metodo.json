@@ -2,11 +2,11 @@
   "slug": "metodo",
   "num": 5,
   "menu": "Método",
-  "titulo": "Onde está o dinheiro: o software virou commodity, o método não",
+  "titulo": "Onde está o dinheiro: o software virou commodity, o método nêo",
   "titulo_curto": "Método > software",
   "minutos": 16,
-  "lead": "Hoje um agente faz engenharia reversa de quase qualquer software, e uma automação sai em minutos. Vender isso solto ficou barato. O que se repete e vale é o método: captação, gestão e administrativo ligados, documentados e empacotados para aplicar em qualquer negócio.",
-  "objetivo": "documentar as peças do seu método de captação e escrever o passo a passo de uma delas para repetir em outro negócio.",
+  "lead": "Hoje um agente faz engenharia reversa de quase qualquer software, e uma automaçêo sai em minutos. Vender isso solto ficou barato. O que se repete e vale é o método: captaçêo, gestêo e administrativo ligados, documentados e empacotados para aplicar em qualquer negócio.",
+  "objetivo": "documentar as peças do seu método de captaçêo e escrever o passo a passo de uma delas para repetir em outro negócio.",
   "competencias": [
     "mapear-negocio-em-tres-blocos",
     "empacotar-metodo",
@@ -15,7 +15,7 @@
   "aprende": [
     {
       "icone": "camadas",
-      "t": "Os três blocos de um negócio: captação, gestão, administrativo"
+      "t": "Os três blocos de um negócio: captaçêo, gestêo, administrativo"
     },
     {
       "icone": "alvo",
@@ -23,14 +23,14 @@
     },
     {
       "icone": "lista",
-      "t": "As peças de um método de captação"
+      "t": "As peças de um método de captaçêo"
     },
     {
       "icone": "arquivo",
       "t": "Empacotar e documentar: faz uma vez, aplica sempre"
     }
   ],
-  "hero_alt": "Caderno de capa escura aberto com um fluxograma desenhado à mão, caneta ao lado.",
+  "hero_alt": "Caderno de capa escura aberto com um fluxograma desenhado à mêo, caneta ao lado.",
   "secoes": [
     {
       "tipo": "diagrama",
@@ -39,7 +39,7 @@
       "nos": [
         {
           "icone": "megafone",
-          "titulo": "Captação",
+          "titulo": "Captaçêo",
           "sub": "Trazer cliente",
           "forte": true,
           "itens": [
@@ -49,14 +49,14 @@
             },
             {
               "icone": "lista",
-              "t": "CRM e ligação"
+              "t": "CRM e ligaçêo"
             }
           ],
-          "detalhe": "É onde a maioria não tem método. A plataforma de gestão está linda, mas ninguém sabe dizer de onde vem o próximo cliente."
+          "detalhe": "É onde a maioria nêo tem método. A plataforma de gestêo está linda, mas ninguém sabe dizer de onde vem o próximo cliente."
         },
         {
           "icone": "camadas",
-          "titulo": "Gestão",
+          "titulo": "Gestêo",
           "sub": "Entregar",
           "itens": [
             {
@@ -68,7 +68,7 @@
               "t": "Agente de suporte"
             }
           ],
-          "detalhe": "Exemplo de gestão resolvida: imóvel entra nos portais sozinho, o inquilino recebe as regras ao entrar, o técnico de manutenção manda a foto pelo app e o painel valida. Com as regras escritas, um agente faz o suporte."
+          "detalhe": "Exemplo de gestêo resolvida: imóvel entra nos portais sozinho, o inquilino recebe as regras ao entrar, o técnico de manutençêo manda a foto pelo app e o painel valida. Com as regras escritas, um agente faz o suporte."
         },
         {
           "icone": "grafico",
@@ -84,11 +84,11 @@
               "t": "Contabilidade"
             }
           ],
-          "detalhe": "Cobrança, nota e contabilidade ligadas ao sistema de gestão. Use um sistema de contabilidade pronto e conecte; não construa um próprio."
+          "detalhe": "Cobrança, nota e contabilidade ligadas ao sistema de gestêo. Use um sistema de contabilidade pronto e conecte; nêo construa um próprio."
         }
       ],
-      "volta": "Gestão e administrativo resolvidos liberam você para cuidar da captação",
-      "legenda": "Não crie produto por criar: apoie-se em ferramentas prontas (CRM, contabilidade) e gaste o esforço no método."
+      "volta": "Gestêo e administrativo resolvidos liberam você para cuidar da captaçêo",
+      "legenda": "Nêo crie produto por criar: apoie-se em ferramentas prontas (CRM, contabilidade) e gaste o esforço no método."
     },
     {
       "tipo": "passos",
@@ -99,7 +99,7 @@
           "titulo": "Commodity",
           "sub": "O que barateou",
           "texto": [
-            "Automação solta sai em minutos com um agente. Software pode ser clonado por engenharia reversa.",
+            "Automaçêo solta sai em minutos com um agente. Software pode ser clonado por engenharia reversa.",
             "Se o seu produto é só isso, o preço vai cair."
           ]
         },
@@ -108,7 +108,7 @@
           "sub": "Use o pronto",
           "texto": [
             "Para CRM, contabilidade e agenda, existe ferramenta pronta. Conecte e personalize.",
-            "Construir o próprio CRM tira meses que deveriam ir para a captação."
+            "Construir o próprio CRM tira meses que deveriam ir para a captaçêo."
           ]
         },
         {
@@ -116,7 +116,7 @@
           "sub": "O que vale",
           "texto": [
             "Método é a sequência de peças que você aplica do mesmo jeito em qualquer negócio: imobiliária, clínica, escritório.",
-            "Um método de captação bem montado roda igual em negócios diferentes. Muda o ângulo; a estrutura fica."
+            "Um método de captaçêo bem montado roda igual em negócios diferentes. Muda o ângulo; a estrutura fica."
           ]
         },
         {
@@ -124,7 +124,7 @@
           "sub": "Faça uma vez",
           "texto": [
             "Cada peça tem um passo a passo escrito (runbook) e, quando der, uma skill ou modelo pronto para o agente.",
-            "No fim, um agente verificador confere se todas as peças estão ativas."
+            "No fim, um agente verificador confere se todas as peças estêo ativas."
           ]
         }
       ]
@@ -135,9 +135,9 @@
       "sub": "A lista é ponto de partida. O seu método terá as suas peças.",
       "blocos": [
         {
-          "rot": "METODO.md · peças da captação",
+          "rot": "METODO.md · peças da captaçêo",
           "icone": "lista",
-          "conteudo": "# Método de captação · <nome do seu método>\n\nANÚNCIO E PÁGINA\n[ ] 1. ângulos definidos (3 no mínimo), cada um com a dor do cliente\n[ ] 2. anúncios estáticos por ângulo, em cada formato\n[ ] 3. landing com o texto que troca conforme o ângulo (utm_content)\n[ ] 4. UTMs e URLs geradas por regra, nunca à mão\n\nCRM\n[ ] 5. landing ligada ao CRM, com os mesmos campos personalizados sempre\n[ ] 6. oportunidades que andam de etapa sozinhas pelos eventos\n[ ] 7. eventos de conversão devolvidos à plataforma de anúncios\n[ ] 8. assistente de atendimento que abre a conversa no mesmo ângulo\n\nVENDA\n[ ] 9. agendamento da ligação direto na agenda do vendedor\n[ ] 10. avaliador de ligações (nota e motivo por ligação)\n[ ] 11. playbook de vendas que se atualiza com as melhores ligações\n\nCONTROLE\n[ ] 12. agente que mede quais ângulos funcionam\n[ ] 13. agente verificador: todas as peças ativas?\n\nCada peça tem o seu runbook em runbooks/<peça>.md"
+          "conteudo": "# Método de captaçêo · <nome do seu método>\n\nANÚNCIO E PÁGINA\n[ ] 1. ângulos definidos (3 no mínimo), cada um com a dor do cliente\n[ ] 2. anúncios estáticos por ângulo, em cada formato\n[ ] 3. landing com o texto que troca conforme o ângulo (utm_content)\n[ ] 4. UTMs e URLs geradas por regra, nunca à mêo\n\nCRM\n[ ] 5. landing ligada ao CRM, com os mesmos campos personalizados sempre\n[ ] 6. oportunidades que andam de etapa sozinhas pelos eventos\n[ ] 7. eventos de conversêo devolvidos à plataforma de anúncios\n[ ] 8. assistente de atendimento que abre a conversa no mesmo ângulo\n\nVENDA\n[ ] 9. agendamento da ligaçêo direto na agenda do vendedor\n[ ] 10. avaliador de ligações (nota e motivo por ligaçêo)\n[ ] 11. playbook de vendas que se atualiza com as melhores ligações\n\nCONTROLE\n[ ] 12. agente que mede quais ângulos funcionam\n[ ] 13. agente verificador: todas as peças ativas?\n\nCada peça tem o seu runbook em runbooks/<peça>.md"
         },
         {
           "rot": "runbooks/[peça].md",
@@ -155,14 +155,14 @@
           "id": "e1",
           "titulo": "1 · Onde está o gargalo",
           "min": "10 min",
-          "texto": "Escreva os três blocos do negócio (captação, gestão, administrativo) e dê uma nota de 0 a 10 para o quanto cada um está organizado.",
+          "texto": "Escreva os três blocos do negócio (captaçêo, gestêo, administrativo) e dê uma nota de 0 a 10 para o quanto cada um está organizado.",
           "pronto": "você tem as três notas e sabe dizer qual bloco é o gargalo."
         },
         {
           "id": "e2",
           "titulo": "2 · METODO.md",
           "min": "40 min",
-          "texto": "Copie a lista de peças, tire o que não serve, acrescente o que é seu e marque o que já existe.",
+          "texto": "Copie a lista de peças, tire o que nêo serve, acrescente o que é seu e marque o que já existe.",
           "pronto": "o METODO.md tem pelo menos 8 peças, cada uma marcada como existe ou falta."
         },
         {
@@ -186,26 +186,26 @@
       "sub": "4 perguntas.",
       "perguntas": [
         {
-          "p": "Um cliente tem uma plataforma de gestão excelente, mas fatura pouco. Onde você olha primeiro?",
+          "p": "Um cliente tem uma plataforma de gestêo excelente, mas fatura pouco. Onde você olha primeiro?",
           "opcoes": [
             "Na própria plataforma, para melhorar as telas e os relatórios",
             "Na contabilidade, para cortar custos",
-            "Na captação: de onde vem o próximo cliente"
+            "Na captaçêo: de onde vem o próximo cliente"
           ],
           "certa": 2,
           "ref": "diagrama",
-          "explica": "Gestão boa sem cliente entrando não fatura. O gargalo comum é a falta de método de captação, não a ferramenta."
+          "explica": "Gestêo boa sem cliente entrando nêo fatura. O gargalo comum é a falta de método de captaçêo, nêo a ferramenta."
         },
         {
           "p": "Vale construir um CRM próprio para o seu método?",
           "opcoes": [
-            "Sim, para ter controle total do código e não depender de ninguém",
-            "Não: use um pronto e gaste o esforço no método",
-            "Sim, porque CRM pronto não conecta com nada"
+            "Sim, para ter controle total do código e nêo depender de ninguém",
+            "Nêo: use um pronto e gaste o esforço no método",
+            "Sim, porque CRM pronto nêo conecta com nada"
           ],
           "certa": 1,
           "ref": "passos",
-          "explica": "CRM e contabilidade prontos se conectam e personalizam. O que diferencia você é a sequência de peças, não o software por baixo."
+          "explica": "CRM e contabilidade prontos se conectam e personalizam. O que diferencia você é a sequência de peças, nêo o software por baixo."
         },
         {
           "p": "O que torna uma peça do método repetível em outro negócio?",
@@ -222,7 +222,7 @@
           "p": "Para que serve o agente verificador no fim do método?",
           "opcoes": [
             "Para criar anúncios novos todos os dias sem precisar de você",
-            "Para conferir se todas as peças estão ativas",
+            "Para conferir se todas as peças estêo ativas",
             "Para substituir o vendedor nas ligações"
           ],
           "certa": 1,
@@ -237,7 +237,7 @@
       "itens": [
         {
           "t": "Três blocos",
-          "texto": "Captação, gestão, administrativo. O gargalo costuma ser a captação."
+          "texto": "Captaçêo, gestêo, administrativo. O gargalo costuma ser a captaçêo."
         },
         {
           "t": "Use o pronto",

@@ -1,6 +1,6 @@
-/* ARCKHÉ Learning v7.2 â€” camada por cima do v71.js (nÃ£o altera o comportamento dele) */
+/* ARCKHê Learning v7.2 ê¢â¬â camada por cima do v71.js (nêÂ£o altera o comportamento dele) */
 (function () {
-  /* sol/lua: atalho de um clique que usa os mesmos botÃµes de tema do Aa (mesma gravaÃ§Ã£o) */
+  /* sol/lua: atalho de um clique que usa os mesmos botêÂµes de tema do Aa (mesma gravaêÂ§êÂ£o) */
   var tb = document.querySelector(".tema-btn");
   if (tb) tb.addEventListener("click", function () {
     var claro = document.documentElement.getAttribute("data-tema") === "papel";
@@ -8,7 +8,7 @@
     if (alvo) alvo.click();
   });
 
-  /* pontos de progresso: espelham as aulas concluÃ­das da lista lateral */
+  /* pontos de progresso: espelham as aulas concluêÂ­das da lista lateral */
   function pontos() {
     document.querySelectorAll(".pontos .pt").forEach(function (p) {
       var l = document.querySelector('.lista-aulas a[data-slug="' + p.getAttribute("data-slug") + '"]');
@@ -23,7 +23,7 @@
   var lista = document.querySelector(".lista-aulas");
   if (lista && window.MutationObserver) new MutationObserver(pontos).observe(lista, { subtree: true, attributes: true, attributeFilter: ["class"] });
 
-  /* tÃ­tulo preso do diagrama: aparece quando o tÃ­tulo da seÃ§Ã£o sai pelo alto */
+  /* têÂ­tulo preso do diagrama: aparece quando o têÂ­tulo da seêÂ§êÂ£o sai pelo alto */
   document.querySelectorAll(".scrolly").forEach(function (sc) {
     var sec = sc.closest(".secao"), h = sec && sec.querySelector(".sec-cab h2");
     if (!h || !sc.querySelector(".sc-tit")) return;
@@ -36,8 +36,8 @@
   });
 })();
 
-/* Seu estudo: anotaÃ§Ãµes no texto, desempenho nos testes e cÃ³pia dos dados â€” tudo no navegador (localStorage).
-   Nenhum texto visÃ­vel fica aqui: vem de #estudo-dados (curso.json â†’ ui.estudo). Texto do aluno sÃ³ por textContent. */
+/* Seu estudo: anotaêÂ§êÂµes no texto, desempenho nos testes e cêÂ³pia dos dados ê¢â¬â tudo no navegador (localStorage).
+   Nenhum texto visêÂ­vel fica aqui: vem de #estudo-dados (curso.json ê¢â â ui.estudo). Texto do aluno sêÂ³ por textContent. */
 (function () {
   "use strict";
   var fonte = document.getElementById("estudo-dados");
@@ -52,10 +52,10 @@
   var marcaTopo = document.querySelector(".topo .marca");
   var RAIZ = marcaTopo ? marcaTopo.getAttribute("href").replace(/index\.html$/, "") : "";
   function el(tag, cls, txt) { var e = document.createElement(tag); if (cls) e.className = cls; if (txt != null) e.textContent = txt; return e; }
-  function corta(t, n) { t = (t || "").replace(/\s+/g, " ").trim(); return t.length > n ? t.slice(0, n - 1) + "â€¦" : t; }
+  function corta(t, n) { t = (t || "").replace(/\s+/g, " ").trim(); return t.length > n ? t.slice(0, n - 1) + "ê¢â¬Â¦" : t; }
   function link(slug, hash) { return RAIZ + "aulas/" + slug + "/index.html" + (hash ? "#" + hash : ""); }
 
-  /* ---------- anotaÃ§Ãµes ---------- */
+  /* ---------- anotaêÂ§êÂµes ---------- */
   var SEL = ".aula-hero .lead, .nesta2 li > span,.nesta2 .objetivo, .secao .texto p, .pcorpo p, .exc p, .resumo > div, .q-p, .sc-passo h3, .sc-passo p, .dg-legenda";
   var lista = [];
   function blocoReal(id) {
@@ -65,7 +65,7 @@
   }
   function blocosReais() { return Array.prototype.filter.call(document.querySelectorAll("[data-bloco]"), function (b) { return !b.closest(".sc-cap"); }); }
   function offset(b, no, off) { var r = document.createRange(); r.selectNodeContents(b); try { r.setEnd(no, off); } catch (e) { return -1; } return r.toString().length; }
-  /* envolve [ini,fim) do texto do bloco em <mark>, pedaÃ§o por pedaÃ§o (nunca surroundContents, nunca marca dentro de marca) */
+  /* envolve [ini,fim) do texto do bloco em <mark>, pedaêÂ§o por pedaêÂ§o (nunca surroundContents, nunca marca dentro de marca) */
   function envolve(b, ini, fim, rec) {
     var w = document.createTreeWalker(b, NodeFilter.SHOW_TEXT), pos = 0, alvos = [], n;
     while ((n = w.nextNode())) {
@@ -102,7 +102,7 @@
     gravar("notas", n);
     pintaNotas();
   }
-  /* no desktop o texto da etapa Ã© lido na legenda do painel fixo (cÃ³pia da etapa): recopia para mostrar as marcas */
+  /* no desktop o texto da etapa êÂ© lido na legenda do painel fixo (cêÂ³pia da etapa): recopia para mostrar as marcas */
   function refrescaCaps() {
     document.querySelectorAll(".scrolly.fixo").forEach(function (sc) {
       var p = sc.querySelector(".sc-passo.ativo"), cap = sc.querySelector(".sc-cap");
@@ -220,7 +220,7 @@
     lista = (ler("notas", {})[AULA] || []).filter(function (r) { return r && r.id && typeof r.quote === "string"; });
     lista.forEach(function (r) { r.nota = typeof r.nota === "string" && r.nota ? r.nota : null; aplica(r); });
     refrescaCaps();
-    /* mouse: mostra ao soltar; toque (alÃ§as de seleÃ§Ã£o do celular): espera a seleÃ§Ã£o parar de mudar */
+    /* mouse: mostra ao soltar; toque (alêÂ§as de seleêÂ§êÂ£o do celular): espera a seleêÂ§êÂ£o parar de mudar */
     var espera = null;
     document.addEventListener("selectionchange", function () { clearTimeout(espera); espera = setTimeout(mostraBarra, 350); });
     document.addEventListener("mouseup", function (e) { if (barra.contains(e.target) || pop.contains(e.target)) return; setTimeout(mostraBarra, 10); });
@@ -232,7 +232,7 @@
       if (!pop.hidden) fecha();
     });
     addEventListener("scroll", function () { if (!barra.hidden && selAtual && selAtual.r) posiciona(barra, selAtual.r.getBoundingClientRect()); }, { passive: true });
-    /* link da gaveta: aula/#nota-<id> leva atÃ© a marca */
+    /* link da gaveta: aula/#nota-<id> leva atêÂ© a marca */
     var irNota = function () {
       var h = decodeURIComponent(location.hash || "");
       if (h.indexOf("#nota-") !== 0) return;
@@ -270,7 +270,7 @@
       rodada = { tipo: rodada.tipo, res: {} };
       pintaDesempenho();
     };
-    /* escuta por delegaÃ§Ã£o: roda depois dos botÃµes do v71.js, que jÃ¡ trataram o clique */
+    /* escuta por delegaêÂ§êÂ£o: roda depois dos botêÂµes do v71.js, que jêÂ¡ trataram o clique */
     qz.addEventListener("click", function (e) {
       var op = e.target.closest(".q-op");
       if (op) { var k = itens.indexOf(op.closest(".q-item")); if (k >= 0 && !(k in rodada.res)) rodada.res[k] = op.getAttribute("data-certa") === "1"; return; }
@@ -294,7 +294,7 @@
       if (!r || !r.ultima) { li.appendChild(el("span", "es-sub", T.nao_fez)); ul.appendChild(li); return; }
       feitos++;
       var melhor = r.melhor || r.ultima;
-      li.appendChild(el("span", "es-sub", T.ultimo + " " + r.ultima.a + "/" + r.ultima.n + " Â· " + T.melhor + " " + melhor.a + "/" + melhor.n + " Â· " + r.tent + " " + (r.tent === 1 ? T.tentativa : T.tentativas)));
+      li.appendChild(el("span", "es-sub", T.ultimo + " " + r.ultima.a + "/" + r.ultima.n + " êÂ· " + T.melhor + " " + melhor.a + "/" + melhor.n + " êÂ· " + r.tent + " " + (r.tent === 1 ? T.tentativa : T.tentativas)));
       var err = (r.erradas || []).filter(function (k) { return a.quiz.perguntas[k]; });
       if (!err.length) li.appendChild(el("span", "es-ok", T.tudo_certo));
       else {
@@ -306,7 +306,7 @@
           ol.appendChild(x);
         });
         li.appendChild(ol);
-        var ir = el("a", "es-link", T.ir_teste + " â†’"); ir.href = link(a.slug, a.quiz.sec); li.appendChild(ir);
+        var ir = el("a", "es-link", T.ir_teste + " ê¢â â"); ir.href = link(a.slug, a.quiz.sec); li.appendChild(ir);
       }
       ul.appendChild(li);
     });
@@ -356,7 +356,7 @@
       var id = atual ? atual.id : "";
       if (id === ultimoSec) return;
       ultimoSec = id;
-      var h = atual && atual.querySelector("h2"), tit = h ? h.textContent.replace(/^\s*\d+\s*Â·\s*/, "").trim() : "";
+      var h = atual && atual.querySelector("h2"), tit = h ? h.textContent.replace(/^\s*\d+\s*êÂ·\s*/, "").trim() : "";
       gravar("jornada", { aula: AULA, sec: id, t: tit, ts: Date.now() });
     };
     addEventListener("scroll", function () { if (!jPedido) { jPedido = true; setTimeout(marcaOnde, 800); } }, { passive: true });
@@ -371,14 +371,14 @@
     var j = ler("jornada", null), a = j && aulaDe(j.aula), lk = el("a", "es-cont-link");
     if (a) {
       lk.href = link(a.slug, j.sec);
-      lk.appendChild(el("small", null, T.continuar + " Â· " + quando(j.ts)));
-      lk.appendChild(el("b", null, a.num + ". " + a.t + (j.t ? " Â· " + j.t : "")));
+      lk.appendChild(el("small", null, T.continuar + " êÂ· " + quando(j.ts)));
+      lk.appendChild(el("b", null, a.num + ". " + a.t + (j.t ? " êÂ· " + j.t : "")));
     } else {
       lk.href = link(D.aulas[0].slug);
       lk.appendChild(el("b", null, T.comecar));
     }
     box.appendChild(lk);
-    /* pÃ¡gina inicial: o botÃ£o principal leva para onde parei */
+    /* pêÂ¡gina inicial: o botêÂ£o principal leva para onde parei */
     var cta = document.querySelector("body.inicio .ini-acoes .comecar");
     if (cta && a) {
       cta.href = link(a.slug, j.sec);
@@ -404,7 +404,7 @@
         try { dados[k.slice(P.length)] = JSON.parse(v); } catch (e) { dados[k.slice(P.length)] = v; }
       }
     } catch (e) {}
-    var obj = { formato: "ARCKHÉ-curso", versao: 1, curso: CURSO, exportado: new Date().toISOString(), dados: dados };
+    var obj = { formato: "ARCKHê-curso", versao: 1, curso: CURSO, exportado: new Date().toISOString(), dados: dados };
     var a = document.createElement("a");
     a.href = URL.createObjectURL(new Blob([JSON.stringify(obj, null, 2)], { type: "application/json" }));
     a.download = CURSO + "-" + new Date().toISOString().slice(0, 10) + ".json";
@@ -412,7 +412,7 @@
     setTimeout(function () { URL.revokeObjectURL(a.href); a.remove(); }, 500);
     aviso(T.export_ok);
   });
-  /* carregar soma com o que existe (nada Ã© apagado) */
+  /* carregar soma com o que existe (nada êÂ© apagado) */
   function mescla(d) {
     var n = 0;
     Object.keys(d).forEach(function (k) {
@@ -463,7 +463,7 @@
       var obj = null;
       try { obj = JSON.parse(rd.result); } catch (e) {}
       inp.value = "";
-      if (!obj || obj.formato !== "ARCKHÉ-curso" || !obj.dados || typeof obj.dados !== "object") { aviso(T.import_erro); return; }
+      if (!obj || obj.formato !== "ARCKHê-curso" || !obj.dados || typeof obj.dados !== "object") { aviso(T.import_erro); return; }
       if (obj.curso !== CURSO) { aviso(T.import_outro); return; }
       var n = mescla(obj.dados);
       aviso(T.import_ok.replace("{n}", n));

@@ -1,16 +1,16 @@
-/* ARCKHÉ Learning 7.13.16 â€” conferidor: o aluno cola (ou carrega) o arquivo que escreveu e a pÃ¡gina confere.
-   Mesmas regras e mensagens do conferir.py (opÃ§Ã£o de terminal). Regras: campos, planos, cada_plano, duracao, termos;
-   7.12.15: video {min, max, proporcao?, largura_min?} â€” lÃª duraÃ§Ã£o e tamanho do arquivo escolhido (loadedmetadata).
-   Tudo no navegador: nada Ã© enviado. Rascunho guardado em localStorage "<data-curso>:conf:<id>:txt"; a Ãºltima
-   conferÃªncia certa em "<data-curso>:conf:<id>" ({ok, data}). Todo texto vem do JSON (ui do curso e da seÃ§Ã£o). */
+/* ARCKHê Learning 7.13.16 ê¢â¬â conferidor: o aluno cola (ou carrega) o arquivo que escreveu e a pêÂ¡gina confere.
+   Mesmas regras e mensagens do conferir.py (opêÂ§êÂ£o de terminal). Regras: campos, planos, cada_plano, duracao, termos;
+   7.12.15: video {min, max, proporcao?, largura_min?} ê¢â¬â lêÂª duraêÂ§êÂ£o e tamanho do arquivo escolhido (loadedmetadata).
+   Tudo no navegador: nada êÂ© enviado. Rascunho guardado em localStorage "<data-curso>:conf:<id>:txt"; a êÂºltima
+   conferêÂªncia certa em "<data-curso>:conf:<id>" ({ok, data}). Todo texto vem do JSON (ui do curso e da seêÂ§êÂ£o). */
 (function () {
   var CURSO = document.body.getAttribute("data-curso") || "curso";
   var LANG = (document.documentElement.getAttribute("lang") || "pt").slice(0, 2);
   function ler(k) { try { return localStorage.getItem(CURSO + ":" + k); } catch (e) { return null; } }
   function gravar(k, v) { try { localStorage.setItem(CURSO + ":" + k, v); } catch (e) {} }
-  var PLANO = /^\s*\d{1,2}\s*[|.)\-â€“â€”]/;
+  var PLANO = /^\s*\d{1,2}\s*[|.)\-ê¢â¬âê¢â¬â]/;
   var DURACAO = /(\d+(?:[.,]\d+)?)\s*(?:s|seg|segundos?|seconds?|sec)\b/;
-  function norm(t) { return String(t || "").normalize("NFD").replace(/[Ì€-Í¯]/g, "").toLowerCase(); }
+  function norm(t) { return String(t || "").normalize("NFD").replace(/[êâ¬-êÂ¯]/g, "").toLowerCase(); }
   function escRe(s) { return s.replace(/[.*+?^${}()|[\]\\]/g, "\\$&"); }
   function fmt(t, k) { t = String(t); Object.keys(k).forEach(function (a) { t = t.split("{" + a + "}").join(String(k[a])); }); return t; }
   function num(v) { var s = (v === Math.round(v)) ? String(v) : String(Math.round(v * 10) / 10); return LANG === "en" ? s : s.replace(".", ","); }
@@ -19,7 +19,7 @@
       return (fam.indexOf(" / ") >= 0 ? fam.split(" / ") : fam.split("/")).map(function (x) { return norm(x).trim(); }).filter(function (x) { return x; });  // 7.13.16
     });
   }
-  // para cada grupo, as famÃ­lias citadas na linha; termo dentro de termo maior (de qualquer grupo) nÃ£o conta
+  // para cada grupo, as famêÂ­lias citadas na linha; termo dentro de termo maior (de qualquer grupo) nêÂ£o conta
   function achados(linha, grupos) {
     var ln = norm(linha), cand = [];
     grupos.forEach(function (g, gi) {
@@ -39,7 +39,7 @@
     return out.map(function (o) { return Object.keys(o).length; }).map(function (n, i) { return { n: n, fams: out[i] }; });
   }
 
-  // 7.11.14: grupo-rÃ³tulo com "min" ("som:") sÃ³ conta com >= min letras depois dele, atÃ© o prÃ³ximo |
+  // 7.11.14: grupo-rêÂ³tulo com "min" ("som:") sêÂ³ conta com >= min letras depois dele, atêÂ© o prêÂ³ximo |
   function preenchido(linha, g) {
     var ln = norm(linha);
     return familias(g).some(function (fam) {
@@ -53,7 +53,7 @@
       });
     });
   }
-  // 7.11.14: a coluna que Ã© sÃ³ a duraÃ§Ã£o ("4 s") vale primeiro; senÃ£o, a primeira menÃ§Ã£o "N s" da linha
+  // 7.11.14: a coluna que êÂ© sêÂ³ a duraêÂ§êÂ£o ("4 s") vale primeiro; senêÂ£o, a primeira menêÂ§êÂ£o "N s" da linha
   function duracaoDoPlano(linha) {
     var cols = norm(linha).split("|").slice(1);
     for (var k = 0; k < cols.length; k++) {
@@ -71,7 +71,7 @@
       if (r.tipo === "campos") {
         var mn = r.min == null ? 3 : r.min;
         r.campos.forEach(function (c) {
-          var pad = new RegExp("^\\s*[-*â€¢]?\\s*" + escRe(norm(c)) + "\\s*:\\s*(.*)$");
+          var pad = new RegExp("^\\s*[-*ê¢â¬Â¢]?\\s*" + escRe(norm(c)) + "\\s*:\\s*(.*)$");
           var ok = linhas.some(function (l) { var m = pad.exec(norm(l)); return m && m[1].replace(/[^a-z0-9]/g, "").length >= mn; });
           if (!ok) faltas.push(fmt(T.conf_campo, { c: c, x: mn }));
         });
@@ -103,10 +103,10 @@
       } else if (r.tipo === "termos") {
         var tudo = linhas.join("\n");
         r.grupos.forEach(function (g, gi) {
-          // 7.13.16: "campo" limita a busca Ã  linha "Campo: â€¦" (o aviso tem de estar no RÃ³tulo, nÃ£o numa fala)
+          // 7.13.16: "campo" limita a busca êÂ  linha "Campo: ê¢â¬Â¦" (o aviso tem de estar no RêÂ³tulo, nêÂ£o numa fala)
           var alvo = tudo;
           if (g.campo) {
-            var pc = new RegExp("^\\s*[-*â€¢]?\\s*" + escRe(norm(g.campo)) + "\\s*:(.*)$");
+            var pc = new RegExp("^\\s*[-*ê¢â¬Â¢]?\\s*" + escRe(norm(g.campo)) + "\\s*:(.*)$");
             alvo = linhas.map(function (l) { var m = pc.exec(norm(l)); return m ? m[1] : ""; }).join("\n");
           }
           if (!achados(alvo, r.grupos)[gi].n) faltas.push(fmt(T.conf_termo, { g: g.rot }));
@@ -117,9 +117,9 @@
     var n = planos.length || (D.regras || []).reduce(function (s, r) { return s + (r.tipo === "campos" ? r.campos.length : 0); }, 0);
     return { ok: true, msg: fmt(D.ok, { n: n, s: num(segs) }), faltas: [] };
   }
-  window.ARCKHÉConferir = conferir;  // para testes (conferir-tela.cjs)
+  window.ARCKHêConferir = conferir;  // para testes (conferir-tela.cjs)
 
-  // 7.12.15: modo vÃ­deo â€” mesmas regras e mensagens de conferir_video() do conferir.py
+  // 7.12.15: modo vêÂ­deo ê¢â¬â mesmas regras e mensagens de conferir_video() do conferir.py
   var PROP = { "16:9": 16 / 9, "9:16": 9 / 16, "1:1": 1, "4:5": 4 / 5, "4:3": 4 / 3, "2.39:1": 2.39, "1.85:1": 1.85 };
   function gcd(a, b) { return b ? gcd(b, a % b) : a; }
   function nomeProp(w, h) {
@@ -133,21 +133,21 @@
     if (!info || !info.d || !isFinite(info.d) || !info.w) return { ok: false, msg: T.conf_falta, faltas: [T.conf_video_ler] };
     var f = [], p = nomeProp(info.w, info.h), d1 = Math.round(info.d * 10) / 10;
     var mi = r.min == null ? 0 : r.min, ma = r.max == null ? 1e6 : r.max;
-    if (d1 < mi || d1 > ma) f.push(fmt(T.conf_video_dur, { s: seg1(info.d), x: mi, y: r.max == null ? "âˆž" : ma }));
+    if (d1 < mi || d1 > ma) f.push(fmt(T.conf_video_dur, { s: seg1(info.d), x: mi, y: r.max == null ? "ê¢ËÅ¾" : ma }));
     var props = !r.proporcao ? [] : (typeof r.proporcao === "string" ? [r.proporcao] : r.proporcao);
     if (props.length && props.indexOf(p) < 0) f.push(fmt(T.conf_video_prop, { w: info.w, h: info.h, p: p, q: props.join(" / ") }));
     if (r.largura_min && info.w < r.largura_min) f.push(fmt(T.conf_video_larg, { w: info.w, x: r.largura_min }));
     if (f.length) return { ok: false, msg: T.conf_falta, faltas: f };
     return { ok: true, msg: fmt(D.ok, { s: seg1(info.d), w: info.w, h: info.h, p: p }), faltas: [] };
   }
-  window.ARCKHÉConferirVideo = conferirVideo;
+  window.ARCKHêConferirVideo = conferirVideo;
   function sonda(url, pronto) {
     var v = document.createElement("video"), feito = false;
     function fim(x) { if (feito) return; feito = true; v.removeAttribute("src"); v.load(); pronto(x); }
     v.preload = "metadata"; v.muted = true;
     v.onloadedmetadata = function () {
       if (isFinite(v.duration)) return fim({ d: v.duration, w: v.videoWidth, h: v.videoHeight });
-      // WebM sem duraÃ§Ã£o no cabeÃ§alho: pular para o fim forÃ§a o navegador a medir
+      // WebM sem duraêÂ§êÂ£o no cabeêÂ§alho: pular para o fim forêÂ§a o navegador a medir
       v.ondurationchange = function () { if (isFinite(v.duration)) fim({ d: v.duration, w: v.videoWidth, h: v.videoHeight }); };
       v.currentTime = 1e7;
     };

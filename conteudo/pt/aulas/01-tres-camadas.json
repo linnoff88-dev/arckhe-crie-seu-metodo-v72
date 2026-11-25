@@ -6,7 +6,7 @@
   "titulo_curto": "Três camadas",
   "minutos": 14,
   "lead": "O dono da empresa vira o filtro de tudo: nota fiscal, acesso de e-mail, bônus no CRM. Para quem pede é urgente; para o negócio raramente é importante. Nesta aula você põe uma camada de agentes entre você e a equipe e escreve o contrato do primeiro deles.",
-  "objetivo": "escrever o contrato do primeiro agente que tira de você os pedidos urgentes que não são importantes.",
+  "objetivo": "escrever o contrato do primeiro agente que tira de você os pedidos urgentes que nêo sêo importantes.",
   "competencias": [
     "classificar-pedidos-eisenhower",
     "escrever-contrato-de-agente",
@@ -27,7 +27,7 @@
     },
     {
       "icone": "portao",
-      "t": "Pôr um botão de confirmar em tudo que não tem volta"
+      "t": "Pôr um botêo de confirmar em tudo que nêo tem volta"
     }
   ],
   "hero_alt": "Escritório pequeno ao fim do dia, mesa organizada e uma tela com uma lista de tarefas.",
@@ -72,7 +72,7 @@
               "t": "Dúvidas de processo"
             }
           ],
-          "detalhe": "Cada agente tem uma área e um contrato escrito. Ele resolve o que está na lista, chama você quando sai da lista e nunca faz o que é irreversível sem confirmação."
+          "detalhe": "Cada agente tem uma área e um contrato escrito. Ele resolve o que está na lista, chama você quando sai da lista e nunca faz o que é irreversível sem confirmaçêo."
         },
         {
           "icone": "chat",
@@ -88,11 +88,11 @@
               "t": "Resposta na hora"
             }
           ],
-          "detalhe": "A equipe pede pelo canal combinado e recebe resposta sem esperar o dono. Pedido fora do canal não é atendido: é o que mantém a camada de pé."
+          "detalhe": "A equipe pede pelo canal combinado e recebe resposta sem esperar o dono. Pedido fora do canal nêo é atendido: é o que mantém a camada de pé."
         }
       ],
       "volta": "Toda sexta você lê o que foi resolvido e ajusta os contratos",
-      "legenda": "Primeiro ordem, depois contexto e regras. Só então o agente funciona bem.",
+      "legenda": "Primeiro ordem, depois contexto e regras. Só entêo o agente funciona bem.",
       "rolagem": true,
       "rolagem_fim": {
         "titulo": "As três camadas juntas",
@@ -110,7 +110,7 @@
           "sub": "5 dias",
           "texto": [
             "Anote tudo que pedem a você durante cinco dias úteis, uma linha por pedido, com quem pediu.",
-            "Não resolva nada diferente: o objetivo é ver o volume real."
+            "Nêo resolva nada diferente: o objetivo é ver o volume real."
           ],
           "exemplo": {
             "rot": "Linha do inventário",
@@ -125,15 +125,15 @@
             "Urgente é o que tem prazo curto; importante é o que mexe no resultado do negócio."
           ],
           "exemplo": {
-            "rot": "Classificação",
-            "texto": "Bônus novo no CRM para amanhã → urgente, não importante."
+            "rot": "Classificaçêo",
+            "texto": "Bônus novo no CRM para amanhê → urgente, nêo importante."
           }
         },
         {
           "titulo": "Escolha 3",
           "sub": "Do grupo certo",
           "texto": [
-            "Pegue três pedidos frequentes do grupo \"urgente, não importante\". Eles vão para o primeiro agente.",
+            "Pegue três pedidos frequentes do grupo \"urgente, nêo importante\". Eles vêo para o primeiro agente.",
             "Prefira tarefas com passo a passo conhecido: buscar nota, cadastrar acesso, responder dúvida de processo."
           ]
         },
@@ -157,13 +157,13 @@
           "titulo": "Confirmar",
           "sub": "O irreversível",
           "texto": [
-            "Compra, pagamento, envio para fora e exclusão sempre param numa pergunta: \"Confirmar?\".",
-            "O agente prepara; quem aperta o botão é você."
+            "Compra, pagamento, envio para fora e exclusêo sempre param numa pergunta: \"Confirmar?\".",
+            "O agente prepara; quem aperta o botêo é você."
           ]
         },
         {
           "titulo": "Sexta",
-          "sub": "Revisão",
+          "sub": "Revisêo",
           "texto": [
             "Leia o relatório: o que foi resolvido, o que foi escalado, o que deu errado.",
             "Cada erro vira uma linha nova no contrato. É assim que o agente melhora."
@@ -179,12 +179,12 @@
         {
           "rot": "Contrato do agente",
           "icone": "arquivo",
-          "conteudo": "AGENTE: <nome> · área: <finanças | pessoal | suporte>\n\nRESOLVE SOZINHO:\n- <tarefa 1>  (ex.: localizar as notas fiscais das ferramentas do mês)\n- <tarefa 2>  (ex.: criar acesso de e-mail para funcionário novo)\n- <tarefa 3>  (ex.: responder dúvidas sobre o processo de reembolso)\n\nME CHAMA QUANDO:\n- envolver dinheiro acima de R$ <valor>\n- o pedido não estiver na lista acima\n- houver conflito entre duas pessoas\n\nNUNCA:\n- pagar, comprar, apagar ou enviar para fora sem eu clicar \"Confirmar\"\n- guardar senha ou dado de cliente em texto aberto\n- prometer prazo ou valor em meu nome\n\nCANAL: <onde a equipe pede>\nRELATÓRIO: toda sexta, uma lista com resolvido / escalado / erro"
+          "conteudo": "AGENTE: <nome> · área: <finanças | pessoal | suporte>\n\nRESOLVE SOZINHO:\n- <tarefa 1>  (ex.: localizar as notas fiscais das ferramentas do mês)\n- <tarefa 2>  (ex.: criar acesso de e-mail para funcionário novo)\n- <tarefa 3>  (ex.: responder dúvidas sobre o processo de reembolso)\n\nME CHAMA QUANDO:\n- envolver dinheiro acima de R$ <valor>\n- o pedido nêo estiver na lista acima\n- houver conflito entre duas pessoas\n\nNUNCA:\n- pagar, comprar, apagar ou enviar para fora sem eu clicar \"Confirmar\"\n- guardar senha ou dado de cliente em texto aberto\n- prometer prazo ou valor em meu nome\n\nCANAL: <onde a equipe pede>\nRELATÓRIO: toda sexta, uma lista com resolvido / escalado / erro"
         },
         {
           "rot": "Mensagem para a equipe",
           "icone": "megafone",
-          "conteudo": "A partir de <segunda, dia/mês>, pedidos de <notas fiscais, acessos e dúvidas de processo>\nvão para <canal>. Quem responde é o assistente <nome>, na hora.\nSe ele não souber, ele me chama. Pedidos desses temas por outro caminho\nserão redirecionados para o canal."
+          "conteudo": "A partir de <segunda, dia/mês>, pedidos de <notas fiscais, acessos e dúvidas de processo>\nvêo para <canal>. Quem responde é o assistente <nome>, na hora.\nSe ele nêo souber, ele me chama. Pedidos desses temas por outro caminho\nserêo redirecionados para o canal."
         }
       ]
     },
@@ -204,7 +204,7 @@
           "id": "e2",
           "titulo": "2 · Contrato escrito",
           "min": "30 min",
-          "texto": "Copie o modelo e preencha com os três pedidos escolhidos do grupo \"urgente, não importante\".",
+          "texto": "Copie o modelo e preencha com os três pedidos escolhidos do grupo \"urgente, nêo importante\".",
           "pronto": "o contrato tem 3 tarefas em \"resolve sozinho\", 3 itens em \"nunca\" e o valor-limite em reais."
         },
         {
@@ -231,21 +231,21 @@
     {
       "tipo": "quiz",
       "titulo": "Teste rápido",
-      "sub": "4 perguntas. A explicação aparece depois da sua tentativa.",
+      "sub": "4 perguntas. A explicaçêo aparece depois da sua tentativa.",
       "perguntas": [
         {
-          "p": "Às 18h um funcionário pede um bônus novo no CRM para amanhã. Em que grupo da matriz isso cai?",
+          "p": "Às 18h um funcionário pede um bônus novo no CRM para amanhê. Em que grupo da matriz isso cai?",
           "opcoes": [
             "Urgente e importante: tem prazo e afeta cliente",
-            "Urgente, não importante: vai para o agente",
-            "Importante, não urgente: agendar para a semana"
+            "Urgente, nêo importante: vai para o agente",
+            "Importante, nêo urgente: agendar para a semana"
           ],
           "certa": 1,
           "ref": "passos",
-          "explica": "Tem prazo curto (urgente), mas não muda o resultado do negócio (não importante). É exatamente o tipo de pedido que sai de você e vai para o agente. O erro comum é tratar como importante só porque alguém está com pressa."
+          "explica": "Tem prazo curto (urgente), mas nêo muda o resultado do negócio (nêo importante). É exatamente o tipo de pedido que sai de você e vai para o agente. O erro comum é tratar como importante só porque alguém está com pressa."
         },
         {
-          "p": "Qual item NÃO deve estar em \"resolve sozinho\" no contrato?",
+          "p": "Qual item NêO deve estar em \"resolve sozinho\" no contrato?",
           "opcoes": [
             "Localizar as notas fiscais das ferramentas do mês",
             "Criar acesso de e-mail para funcionário novo",
@@ -253,12 +253,12 @@
           ],
           "certa": 2,
           "ref": "codigo",
-          "explica": "Pagamento é irreversível: o agente pode preparar, mas a decisão passa pelo botão \"Confirmar\". Buscar nota e criar acesso têm passo a passo conhecido e podem ficar com o agente."
+          "explica": "Pagamento é irreversível: o agente pode preparar, mas a decisêo passa pelo botêo \"Confirmar\". Buscar nota e criar acesso têm passo a passo conhecido e podem ficar com o agente."
         },
         {
           "p": "Um funcionário manda o pedido no seu WhatsApp pessoal em vez do canal. O que fazer?",
           "opcoes": [
-            "Responder rápido no WhatsApp para não atrasar o trabalho dele",
+            "Responder rápido no WhatsApp para nêo atrasar o trabalho dele",
             "Redirecionar para o canal combinado",
             "Repassar você mesmo ao agente"
           ],
@@ -267,15 +267,15 @@
           "explica": "Se você responde ou repassa, volta a ser o filtro e a camada de agentes desmonta. Redirecionar com gentileza ensina o caminho novo."
         },
         {
-          "p": "O agente errou a mesma coisa duas vezes nesta semana. Qual é a correção?",
+          "p": "O agente errou a mesma coisa duas vezes nesta semana. Qual é a correçêo?",
           "opcoes": [
-            "Uma linha nova no contrato, na revisão de sexta",
+            "Uma linha nova no contrato, na revisêo de sexta",
             "Trocar o agente por outro modelo de IA mais caro e mais novo",
             "Voltar a fazer a tarefa você mesmo"
           ],
           "certa": 0,
           "ref": "passos",
-          "explica": "Erro repetido quase sempre é regra que falta. A revisão de sexta transforma cada erro em linha do contrato. Trocar o modelo antes de escrever a regra só troca o erro de lugar."
+          "explica": "Erro repetido quase sempre é regra que falta. A revisêo de sexta transforma cada erro em linha do contrato. Trocar o modelo antes de escrever a regra só troca o erro de lugar."
         }
       ]
     },
@@ -296,7 +296,7 @@
           "texto": "Resolve sozinho, me chama quando, nunca faz."
         },
         {
-          "t": "Botão de confirmar",
+          "t": "Botêo de confirmar",
           "texto": "O irreversível espera você."
         }
       ]

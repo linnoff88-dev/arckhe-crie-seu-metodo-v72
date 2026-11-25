@@ -68,7 +68,7 @@
               "t": "Financeiro de sócios"
             }
           ],
-          "detalhe": "O fundo de comércio: projetos em sigilo, pesquisa, dados de sócios. Sai da pasta que o agente enxerga. Separe antes de conectar, não depois."
+          "detalhe": "O fundo de comércio: projetos em sigilo, pesquisa, dados de sócios. Sai da pasta que o agente enxerga. Separe antes de conectar, nêo depois."
         },
         {
           "icone": "chip",
@@ -94,7 +94,7 @@
           "titulo": "O teste",
           "sub": "Modelo novo",
           "texto": [
-            "Pergunte: se amanhã sair um modelo que faz o que eu faço, o meu trabalho some ou fica mais rápido?",
+            "Pergunte: se amanhê sair um modelo que faz o que eu faço, o meu trabalho some ou fica mais rápido?",
             "Se some, você vende ferramenta. Se acelera, você vende critério e método."
           ]
         },
@@ -119,7 +119,7 @@
           "sub": "Sem prova social",
           "texto": [
             "Ainda sem depoimento? Grave um vídeo curto explicando o caso que você fez e o que mudou para o cliente, sem nomes.",
-            "Monte uma landing com o vídeo e um botão para uma conversa de 15 minutos. Ao terminar um projeto, peça o depoimento."
+            "Monte uma landing com o vídeo e um botêo para uma conversa de 15 minutos. Ao terminar um projeto, peça o depoimento."
           ]
         }
       ]
@@ -132,12 +132,12 @@
         {
           "rot": "Teste do modelo novo",
           "icone": "alvo",
-          "conteudo": "O QUE EU ENTREGO HOJE (3 itens):\n1. <entrega>\n2. <entrega>\n3. <entrega>\n\nPARA CADA UM: se amanhã um modelo novo fizer isso sozinho,\n[ ] some   [ ] fico mais rápido\n\nO QUE FICA COMIGO EM QUALQUER MODELO:\n- <critério que eu aplico: o que revisar, o que recusar, a ordem das peças>\n- <método documentado>\n\nPRÓXIMO PASSO: transformar 1 item \"some\" em método (aula 5)."
+          "conteudo": "O QUE EU ENTREGO HOJE (3 itens):\n1. <entrega>\n2. <entrega>\n3. <entrega>\n\nPARA CADA UM: se amanhê um modelo novo fizer isso sozinho,\n[ ] some   [ ] fico mais rápido\n\nO QUE FICA COMIGO EM QUALQUER MODELO:\n- <critério que eu aplico: o que revisar, o que recusar, a ordem das peças>\n- <método documentado>\n\nPRÓXIMO PASSO: transformar 1 item \"some\" em método (aula 5)."
         },
         {
-          "rot": "Classificação das pastas do cliente",
+          "rot": "Classificaçêo das pastas do cliente",
           "icone": "cadeado",
-          "conteudo": "CLIENTE: <nome>   SERVIDOR: <NAS / nuvem / misto>   DATA: <dd/mm/aaaa>\n\nPASTA                      | GRUPO     | MOTIVO\n/propostas                 | aberto    | modelos e propostas comerciais\n/projetos/<cliente-sigilo> | restrito  | contrato de confidencialidade\n/financeiro/socios         | restrito  | dados pessoais dos sócios\n/pesquisa                  | local     | fundo de comércio, precisa de IA\n\nDECISÃO DO CLIENTE (assinada):\n[ ] o cliente é dono e responsável pelos dados; eu aplico a segurança\n[ ] montado na minha estrutura, com as regras acima"
+          "conteudo": "CLIENTE: <nome>   SERVIDOR: <NAS / nuvem / misto>   DATA: <dd/mm/aaaa>\n\nPASTA                      | GRUPO     | MOTIVO\n/propostas                 | aberto    | modelos e propostas comerciais\n/projetos/<cliente-sigilo> | restrito  | contrato de confidencialidade\n/financeiro/socios         | restrito  | dados pessoais dos sócios\n/pesquisa                  | local     | fundo de comércio, precisa de IA\n\nDECISêO DO CLIENTE (assinada):\n[ ] o cliente é dono e responsável pelos dados; eu aplico a segurança\n[ ] montado na minha estrutura, com as regras acima"
         }
       ]
     },
@@ -162,7 +162,7 @@
         },
         {
           "id": "e3",
-          "titulo": "3 · Prospecção com o caso",
+          "titulo": "3 · Prospecçêo com o caso",
           "min": "40 min",
           "texto": "Escreva o roteiro de um vídeo de até 90 segundos sobre um caso seu: problema, o que você montou, o que mudou.",
           "pronto": "o roteiro tem as três partes, nenhum nome de cliente e termina com o convite para 15 minutos."
@@ -183,7 +183,7 @@
         {
           "p": "Você vende automações em uma plataforma de fluxos. Sai um agente que faz o mesmo sozinho e seus pedidos caem. O que isso mostra?",
           "opcoes": [
-            "Que você estava trabalhando a ferramenta, não o critério",
+            "Que você estava trabalhando a ferramenta, nêo o critério",
             "Que você precisa trocar de plataforma de fluxos por outra mais nova e completa",
             "Que o mercado de IA vai acabar logo"
           ],
@@ -192,15 +192,15 @@
           "explica": "Se o trabalho some com o modelo novo, o valor estava na ferramenta. A saída é vender o critério e o método que continuam valendo em qualquer modelo."
         },
         {
-          "p": "O escritório quer o agente nos arquivos do NAS, onde também estão projetos em sigilo. Qual é o primeiro passo?",
+          "p": "O escritório quer o agente nos arquivos do NAS, onde também estêo projetos em sigilo. Qual é o primeiro passo?",
           "opcoes": [
             "Conectar tudo de uma vez e revisar o acesso das pastas depois",
             "Separar o restrito antes de conectar",
-            "Recusar o cliente: NAS não aceita IA"
+            "Recusar o cliente: NAS nêo aceita IA"
           ],
           "certa": 1,
           "ref": "diagrama",
-          "explica": "Depois de conectar, o agente já enxerga tudo. Separar antes, e com decisão do cliente por escrito, é o que protege o fundo de comércio."
+          "explica": "Depois de conectar, o agente já enxerga tudo. Separar antes, e com decisêo do cliente por escrito, é o que protege o fundo de comércio."
         },
         {
           "p": "Em que caso vale gastar horas no plano antes de executar?",
@@ -211,10 +211,10 @@
           ],
           "certa": 2,
           "ref": "passos",
-          "explica": "Tema delicado, com dinheiro e muitas fontes, pede critério antes da execução. Tarefa simples e reversível não precisa de horas de plano."
+          "explica": "Tema delicado, com dinheiro e muitas fontes, pede critério antes da execuçêo. Tarefa simples e reversível nêo precisa de horas de plano."
         },
         {
-          "p": "Você ainda não tem depoimentos. Como prospectar?",
+          "p": "Você ainda nêo tem depoimentos. Como prospectar?",
           "opcoes": [
             "Esperar o primeiro cliente terminar para começar",
             "Vídeo curto do caso, sem nomes, numa landing com convite de 15 minutos",
@@ -222,7 +222,7 @@
           ],
           "certa": 1,
           "ref": "passos",
-          "explica": "O caso contado com problema, solução e resultado já convence, sem expor o cliente. Inventar depoimento é mentira; esperar atrasa meses."
+          "explica": "O caso contado com problema, soluçêo e resultado já convence, sem expor o cliente. Inventar depoimento é mentira; esperar atrasa meses."
         }
       ]
     },
@@ -236,7 +236,7 @@
         },
         {
           "t": "Cozinhe o plano",
-          "texto": "No delicado, horas de plano antes da execução."
+          "texto": "No delicado, horas de plano antes da execuçêo."
         },
         {
           "t": "Três grupos",

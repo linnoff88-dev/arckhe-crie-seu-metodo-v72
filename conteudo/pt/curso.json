@@ -2,23 +2,23 @@
   "id": "crie-seu-metodo-v72",
   "lang": "pt-BR",
   "url": "https://linnoff88-dev.github.io/
-  "nome": "Crie seu mÃ©todo",
+  "nome": "Crie seu mêÂ©todo",
   "sub": "Pare de polir a ferramenta",
   "volta": {
-    "t": "ARCKHÉ AI",
-    "href": "https://ARCKHÉ AI/"
+    "t": "ARCKHê AI",
+    "href": "https://ARCKHê AI/"
   },
   "lado_card": {
     "rot": "Ideia central",
     "t": "O software virou commodity",
-    "texto": "O que se repete em qualquer negÃ³cio Ã© o mÃ©todo: documentado, empacotado e melhorado a cada campanha.",
-    "link": "ComeÃ§ar pela aula 5",
+    "texto": "O que se repete em qualquer negêÂ³cio êÂ© o mêÂ©todo: documentado, empacotado e melhorado a cada campanha.",
+    "link": "ComeêÂ§ar pela aula 5",
     "href": "aulas/metodo/"
   },
-  "rodape": "ARCKHÉ AI Â· conteÃºdo aberto e gratuito Â· formato ARCKHÉ Learning v7.2 Â· <a href=\"https://ARCKHÉ AI/\">ARCKHÉ AI</a> Â· <a href=\"https://www.ARCKHÉ AI/cursos/386-crie-seu-metodo-gestao-com-agentes-e-o-metodo-que-vale-mais-que-o-software/\">Ficha completa deste curso no ARCKHÉ AI</a> Â· <a href=\"https://www.ARCKHÉ AI/aprender-inteligencia-artificial/\">Guia: como aprender inteligÃªncia artificial</a>",
+  "rodape": "ARCKHê AI êÂ· conteêÂºdo aberto e gratuito êÂ· formato ARCKHê Learning v7.2 êÂ· <a href=\"https://ARCKHê AI/\">ARCKHê AI</a> êÂ· <a href=\"https://www.ARCKHê AI/cursos/386-crie-seu-metodo-gestao-com-agentes-e-o-metodo-que-vale-mais-que-o-software/\">Ficha completa deste curso no ARCKHê AI</a> êÂ· <a href=\"https://www.ARCKHê AI/aprender-inteligencia-artificial/\">Guia: como aprender inteligêÂªncia artificial</a>",
   "videos": {
     "csm-a2": {
-      "titulo": "A aula 2 em vÃ­deo",
+      "titulo": "A aula 2 em vêÂ­deo",
       "duracao": "2 min 38 s",
       "mp4": "https://github.com/linnoff88-dev/crie-seu-metodo-v72/releases/download/video-v1.0.0/csm-a2.mp4",
       "vtt": "assets/vtt/csm-a2.vtt",
@@ -26,7 +26,7 @@
       "pagina": "https://www.youtube.com/watch?v=YLVpQ9-umAk"
     },
     "csm-a3": {
-      "titulo": "A aula 3 em vÃ­deo",
+      "titulo": "A aula 3 em vêÂ­deo",
       "duracao": "2 min 22 s",
       "mp4": "https://github.com/linnoff88-dev/crie-seu-metodo-v72/releases/download/video-v1.0.0/csm-a3.mp4",
       "vtt": "assets/vtt/csm-a3.vtt",
@@ -34,7 +34,7 @@
       "pagina": "https://www.youtube.com/watch?v=NVNpwNvoUR8"
     },
     "csm-a4": {
-      "titulo": "A aula 4 em vÃ­deo",
+      "titulo": "A aula 4 em vêÂ­deo",
       "duracao": "2 min 30 s",
       "mp4": "https://github.com/linnoff88-dev/crie-seu-metodo-v72/releases/download/video-v1.0.0/csm-a4.mp4",
       "vtt": "assets/vtt/csm-a4.vtt",
@@ -42,7 +42,7 @@
       "pagina": "https://www.youtube.com/watch?v=3Qk8oKy6Pbk"
     },
     "csm-a5": {
-      "titulo": "A aula 5 em vÃ­deo",
+      "titulo": "A aula 5 em vêÂ­deo",
       "duracao": "2 min 30 s",
       "mp4": "https://github.com/linnoff88-dev/crie-seu-metodo-v72/releases/download/video-v1.0.0/csm-a5.mp4",
       "vtt": "assets/vtt/csm-a5.vtt",
@@ -50,7 +50,7 @@
       "pagina": "https://www.youtube.com/watch?v=_nwt2gZqeLM"
     },
     "csm-a6": {
-      "titulo": "A aula 6 em vÃ­deo",
+      "titulo": "A aula 6 em vêÂ­deo",
       "duracao": "2 min 16 s",
       "mp4": "https://github.com/linnoff88-dev/crie-seu-metodo-v72/releases/download/video-v1.0.0/csm-a6.mp4",
       "vtt": "assets/vtt/csm-a6.vtt",
@@ -58,7 +58,7 @@
       "pagina": "https://www.youtube.com/watch?v=MOi5YX8CHSM"
     },
     "csm-a7": {
-      "titulo": "A aula 7 em vÃ­deo",
+      "titulo": "A aula 7 em vêÂ­deo",
       "duracao": "2 min 24 s",
       "mp4": "https://github.com/linnoff88-dev/crie-seu-metodo-v72/releases/download/video-v1.0.0/csm-a7.mp4",
       "vtt": "assets/vtt/csm-a7.vtt",
@@ -66,7 +66,7 @@
       "pagina": "https://www.youtube.com/watch?v=GQXN8HxNkRw"
     },
     "csm-visao": {
-      "titulo": "O curso inteiro em vÃ­deo",
+      "titulo": "O curso inteiro em vêÂ­deo",
       "duracao": "2 min 47 s",
       "mp4": "https://github.com/linnoff88-dev/crie-seu-metodo-v72/releases/download/video-v1.0.0/csm-visao.mp4",
       "vtt": "assets/vtt/csm-visao.vtt",
@@ -74,7 +74,7 @@
       "pagina": "https://www.youtube.com/watch?v=pp_3giDnS1w"
     },
     "csm-a1": {
-      "titulo": "A aula 1 em vÃ­deo",
+      "titulo": "A aula 1 em vêÂ­deo",
       "duracao": "2 min 14 s",
       "mp4": "https://github.com/linnoff88-dev/crie-seu-metodo-v72/releases/download/video-v1.0.0/csm-a1.mp4",
       "vtt": "assets/vtt/csm-a1.vtt",
@@ -83,156 +83,156 @@
     }
   },
   "inicio": {
-    "kicker": "Curso Â· 7 aulas Â· gestÃ£o com agentes e mÃ©todo",
-    "titulo": "Se a prÃ³xima IA apaga seu trabalho, vocÃª estava polindo a ferramenta",
-    "lead": "Pare de vender automaÃ§Ã£o. Comece a vender mÃ©todo. Em sete aulas prÃ¡ticas vocÃª coloca agentes entre vocÃª e a equipe, monta um assistente que sÃ³ age com sua confirmaÃ§Ã£o, organiza agentes por funÃ§Ã£o e empacota o seu mÃ©todo de captaÃ§Ã£o para repetir em qualquer negÃ³cio.",
-    "cta": "ComeÃ§ar pela aula 1",
+    "kicker": "Curso êÂ· 7 aulas êÂ· gestêÂ£o com agentes e mêÂ©todo",
+    "titulo": "Se a prêÂ³xima IA apaga seu trabalho, vocêÂª estava polindo a ferramenta",
+    "lead": "Pare de vender automaêÂ§êÂ£o. Comece a vender mêÂ©todo. Em sete aulas prêÂ¡ticas vocêÂª coloca agentes entre vocêÂª e a equipe, monta um assistente que sêÂ³ age com sua confirmaêÂ§êÂ£o, organiza agentes por funêÂ§êÂ£o e empacota o seu mêÂ©todo de captaêÂ§êÂ£o para repetir em qualquer negêÂ³cio.",
+    "cta": "ComeêÂ§ar pela aula 1",
     "cta2": {
-      "t": "Ir direto ao mÃ©todo",
+      "t": "Ir direto ao mêÂ©todo",
       "href": "aulas/metodo/"
     },
-    "capa_alt": "Mesa de trabalho escura com um caderno de mÃ©todo aberto e uma tela desfocada ao fundo.",
+    "capa_alt": "Mesa de trabalho escura com um caderno de mêÂ©todo aberto e uma tela desfocada ao fundo.",
     "numeros": [
       {
         "v": "3",
-        "t": "camadas: vocÃª, agentes, equipe"
+        "t": "camadas: vocêÂª, agentes, equipe"
       },
       {
         "v": "1",
-        "t": "agente por funÃ§Ã£o"
+        "t": "agente por funêÂ§êÂ£o"
       },
       {
         "v": "1",
-        "t": "Ã¢ngulo do anÃºncio ao vendedor"
+        "t": "êÂ¢ngulo do anêÂºncio ao vendedor"
       },
       {
         "v": "7",
-        "t": "aulas com prÃ¡tica"
+        "t": "aulas com prêÂ¡tica"
       }
     ],
     "aulas_titulo": "As aulas",
-    "aulas_sub": "Da gestÃ£o que anda sozinha ao mÃ©todo que vocÃª repete. Cada aula tem diagrama, modelo para copiar, prÃ¡tica com \"pronto quando\" e teste comentado.",
+    "aulas_sub": "Da gestêÂ£o que anda sozinha ao mêÂ©todo que vocêÂª repete. Cada aula tem diagrama, modelo para copiar, prêÂ¡tica com \"pronto quando\" e teste comentado.",
     "blocos": [
       {
-        "t": "Para quem Ã©",
+        "t": "Para quem êÂ©",
         "itens": [
           "Donos de pequenas empresas que viraram o filtro de todos os pedidos da equipe.",
-          "Consultores e agÃªncias que vendem automaÃ§Ã£o e sentem o preÃ§o cair.",
-          "Quem jÃ¡ usa agentes de IA e quer organizar o trabalho deles."
+          "Consultores e agêÂªncias que vendem automaêÂ§êÂ£o e sentem o preêÂ§o cair.",
+          "Quem jêÂ¡ usa agentes de IA e quer organizar o trabalho deles."
         ]
       },
       {
-        "t": "O que vocÃª sai fazendo",
+        "t": "O que vocêÂª sai fazendo",
         "itens": [
           "Contrato do primeiro agente, com o que ele resolve e o que nunca faz.",
           "Mapa da sua equipe de agentes e as regras escritas de cada um.",
-          "O seu mÃ©todo de captaÃ§Ã£o documentado, com anÃºncio e landing no mesmo Ã¢ngulo.",
-          "Um plano para dados sensÃ­veis antes de ligar a IA no cliente."
+          "O seu mêÂ©todo de captaêÂ§êÂ£o documentado, com anêÂºncio e landing no mesmo êÂ¢ngulo.",
+          "Um plano para dados sensêÂ­veis antes de ligar a IA no cliente."
         ]
       }
     ]
   },
   "ui": {
-    "pular": "Pular para o conteÃºdo",
+    "pular": "Pular para o conteêÂºdo",
     "aulas": "Aulas",
-    "concluido": "concluÃ­do",
+    "concluido": "concluêÂ­do",
     "aula": "Aula",
-    "nesta_aula": "Nesta aula, vocÃª vai aprender:",
+    "nesta_aula": "Nesta aula, vocêÂª vai aprender:",
     "objetivo": "Objetivo:",
-    "proxima_aula": "PrÃ³xima aula",
+    "proxima_aula": "PrêÂ³xima aula",
     "aula_anterior": "Aula anterior",
-    "voltar_inicio": "Voltar ao inÃ­cio do curso",
-    "marcar_concluida": "Marcar aula como concluÃ­da",
+    "voltar_inicio": "Voltar ao inêÂ­cio do curso",
+    "marcar_concluida": "Marcar aula como concluêÂ­da",
     "dg_dica": "Clique em cada bloco do diagrama para ver o que ele faz.",
     "copiar": "Copiar",
     "copiado": "Copiado",
-    "selo_simulacao": "SimulaÃ§Ã£o: exemplo ilustrativo",
-    "selo_real": "Exemplo do repositÃ³rio",
+    "selo_simulacao": "SimulaêÂ§êÂ£o: exemplo ilustrativo",
+    "selo_real": "Exemplo do repositêÂ³rio",
     "pronto_quando": "Pronto quando:",
-    "fiz": "Fiz este exercÃ­cio",
-    "video_pagina": "PÃ¡gina do vÃ­deo com roteiro",
+    "fiz": "Fiz este exercêÂ­cio",
+    "video_pagina": "PêÂ¡gina do vêÂ­deo com roteiro",
     "pergunta": "Pergunta",
     "de": "de",
-    "cert_tag": "competÃªncia",
+    "cert_tag": "competêÂªncia",
     "correto": "Correto",
-    "errado": "NÃ£o Ã© essa",
-    "quiz_aguarda": "Escolha uma alternativa. A explicaÃ§Ã£o aparece depois da sua tentativa.",
-    "proxima_pergunta": "PrÃ³xima pergunta",
+    "errado": "NêÂ£o êÂ© essa",
+    "quiz_aguarda": "Escolha uma alternativa. A explicaêÂ§êÂ£o aparece depois da sua tentativa.",
+    "proxima_pergunta": "PrêÂ³xima pergunta",
     "quiz_ver": "Ver resultado",
-    "quiz_fim": "Teste concluÃ­do",
-    "quiz_total": "VocÃª acertou {a} de {n}. Acertando todas, a aula Ã© marcada como concluÃ­da.",
-    "aparencia": "AparÃªncia",
+    "quiz_fim": "Teste concluêÂ­do",
+    "quiz_total": "VocêÂª acertou {a} de {n}. Acertando todas, a aula êÂ© marcada como concluêÂ­da.",
+    "aparencia": "AparêÂªncia",
     "tamanho_texto": "Tamanho do texto",
     "tema": "Tema",
     "tema_escuro": "Escuro",
     "tema_papel": "Papel claro",
-    "role_dica": "Role a pÃ¡gina: cada etapa abaixo acende a sua parte do diagrama.",
+    "role_dica": "Role a pêÂ¡gina: cada etapa abaixo acende a sua parte do diagrama.",
     "pre_requisito": "requer",
     "ver_aula": "Ver a aula",
-    "mapa_dica": "Clique num exercÃ­cio para ver o que fazer e o \"pronto quando\".",
+    "mapa_dica": "Clique num exercêÂ­cio para ver o que fazer e o \"pronto quando\".",
     "etapas": "Etapas",
-    "exercicios": "exercÃ­cios",
+    "exercicios": "exercêÂ­cios",
     "rever": "Rever:",
     "revisar_erradas": "Revisar as erradas",
     "refazer": "Refazer o teste",
     "h_semana": "h por semana",
-    "data_inicio": "Data de inÃ­cio",
-    "ritmo": "Tempo disponÃ­vel",
+    "data_inicio": "Data de inêÂ­cio",
+    "ritmo": "Tempo disponêÂ­vel",
     "gerar_plano": "Gerar meu plano",
     "baixar_md": "Baixar plano.md",
-    "baixar_ics": "Baixar para o calendÃ¡rio (.ics)",
+    "baixar_ics": "Baixar para o calendêÂ¡rio (.ics)",
     "ind_estudo": "Estudo (aulas)",
-    "ind_pratica": "PrÃ¡tica declarada",
-    "ind_nota": "PrÃ¡tica = exercÃ­cios que vocÃª marcou como feitos. A comprovaÃ§Ã£o vem na prova da certificaÃ§Ã£o.",
+    "ind_pratica": "PrêÂ¡tica declarada",
+    "ind_nota": "PrêÂ¡tica = exercêÂ­cios que vocêÂª marcou como feitos. A comprovaêÂ§êÂ£o vem na prova da certificaêÂ§êÂ£o.",
     "estudo": {
       "titulo": "Seu estudo",
       "continuar": "Continuar de onde parei",
-      "comecar": "ComeÃ§ar pela aula 1",
+      "comecar": "ComeêÂ§ar pela aula 1",
       "cta_continuar": "Continuar a aula {n}",
       "hoje": "hoje",
       "ontem": "ontem",
-      "ha_dias": "hÃ¡ {n} dias",
+      "ha_dias": "hêÂ¡ {n} dias",
       "desempenho": "Desempenho nos testes",
-      "notas": "Minhas anotaÃ§Ãµes",
+      "notas": "Minhas anotaêÂ§êÂµes",
       "dados": "Copiar meus dados",
       "sem_testes": "Nenhum teste feito ainda. O teste fica no fim de cada aula.",
-      "nao_fez": "teste ainda nÃ£o feito",
-      "ultimo": "Ãšltimo",
+      "nao_fez": "teste ainda nêÂ£o feito",
+      "ultimo": "êÅ¡ltimo",
       "melhor": "Melhor",
       "tentativas": "tentativas",
       "tentativa": "tentativa",
-      "tudo_certo": "Acertou tudo no Ãºltimo teste.",
+      "tudo_certo": "Acertou tudo no êÂºltimo teste.",
       "rever": "Para rever",
       "resposta": "Resposta certa:",
       "ir_teste": "Refazer o teste",
-      "sem_notas": "Nenhuma anotaÃ§Ã£o ainda. Na aula, selecione um trecho do texto e toque em Marcar ou Anotar.",
-      "so_marcado": "(sÃ³ marcado)",
+      "sem_notas": "Nenhuma anotaêÂ§êÂ£o ainda. Na aula, selecione um trecho do texto e toque em Marcar ou Anotar.",
+      "so_marcado": "(sêÂ³ marcado)",
       "marcar": "Marcar",
       "anotar": "Anotar",
       "salvar": "Salvar",
       "apagar": "Apagar marca",
       "fechar": "Fechar",
-      "nota_ph": "Escreva sua anotaÃ§Ã£o sobre este trechoâ€¦",
-      "um_bloco": "Marque dentro de um parÃ¡grafo sÃ³.",
-      "nao_marca": "Este trecho nÃ£o pode ser marcado.",
-      "dados_exp": "Seu progresso, suas anotaÃ§Ãµes e as notas dos testes ficam sÃ³ neste navegador. Baixe uma cÃ³pia (.json) para guardar ou para continuar em outro computador ou navegador; lÃ¡, carregue a cÃ³pia. Carregar soma com o que jÃ¡ existe e nÃ£o apaga nada.",
-      "exportar": "Baixar cÃ³pia",
-      "importar": "Carregar cÃ³pia",
-      "import_ok": "CÃ³pia carregada ({n} itens). Atualizando a pÃ¡ginaâ€¦",
-      "import_erro": "Arquivo nÃ£o reconhecido. Nada foi alterado.",
-      "import_outro": "Esta cÃ³pia Ã© de outro curso. Nada foi alterado.",
-      "export_ok": "CÃ³pia baixada."
+      "nota_ph": "Escreva sua anotaêÂ§êÂ£o sobre este trechoê¢â¬Â¦",
+      "um_bloco": "Marque dentro de um parêÂ¡grafo sêÂ³.",
+      "nao_marca": "Este trecho nêÂ£o pode ser marcado.",
+      "dados_exp": "Seu progresso, suas anotaêÂ§êÂµes e as notas dos testes ficam sêÂ³ neste navegador. Baixe uma cêÂ³pia (.json) para guardar ou para continuar em outro computador ou navegador; lêÂ¡, carregue a cêÂ³pia. Carregar soma com o que jêÂ¡ existe e nêÂ£o apaga nada.",
+      "exportar": "Baixar cêÂ³pia",
+      "importar": "Carregar cêÂ³pia",
+      "import_ok": "CêÂ³pia carregada ({n} itens). Atualizando a pêÂ¡ginaê¢â¬Â¦",
+      "import_erro": "Arquivo nêÂ£o reconhecido. Nada foi alterado.",
+      "import_outro": "Esta cêÂ³pia êÂ© de outro curso. Nada foi alterado.",
+      "export_ok": "CêÂ³pia baixada."
     },
-    "conv_dica": "Escolha a sua resposta. O comentÃ¡rio aparece logo depois e a conversa segue conforme a escolha.",
-    "conv_voce": "VocÃª",
+    "conv_dica": "Escolha a sua resposta. O comentêÂ¡rio aparece logo depois e a conversa segue conforme a escolha.",
+    "conv_voce": "VocêÂª",
     "conv_escolha": "Sua resposta",
     "conv_boa": "Boa escolha",
-    "conv_meio": "DÃ¡ para melhorar",
+    "conv_meio": "DêÂ¡ para melhorar",
     "conv_ruim": "Escolha fraca",
     "conv_fim": "Fim da conversa",
-    "conv_placar": "VocÃª fez {p} de {m} pontos possÃ­veis.",
-    "conv_licao": "LiÃ§Ã£o:",
-    "conv_recomecar": "RecomeÃ§ar a conversa",
+    "conv_placar": "VocêÂª fez {p} de {m} pontos possêÂ­veis.",
+    "conv_licao": "LiêÂ§êÂ£o:",
+    "conv_recomecar": "RecomeêÂ§ar a conversa",
     "conv_feita": "Seu melhor placar: {p} de {m} pontos."
   },
   "icone": "camadas"

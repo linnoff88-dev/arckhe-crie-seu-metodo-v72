@@ -2,11 +2,11 @@
   "slug": "orquestra",
   "num": 3,
   "menu": "Orquestra",
-  "titulo": "A orquestra de agentes: um agente por função, com contexto e regras escritas",
+  "titulo": "A orquestra de agentes: um agente por funçêo, com contexto e regras escritas",
   "titulo_curto": "Orquestra de agentes",
   "minutos": 16,
-  "lead": "O diretor de uma empresa é um maestro: compras, marketing, comercial e financeiro tocam juntos e ele coordena. Com agentes é igual. Em vez de um assistente que sabe um pouco de tudo, você monta um por função, cada um com o seu contexto, as suas regras e o seu modelo, rodando num servidor ligado 24 horas.",
-  "objetivo": "desenhar sua equipe de agentes por função, com contexto por empresa, regras escritas e o modelo de cada um.",
+  "lead": "O diretor de uma empresa é um maestro: compras, marketing, comercial e financeiro tocam juntos e ele coordena. Com agentes é igual. Em vez de um assistente que sabe um pouco de tudo, você monta um por funçêo, cada um com o seu contexto, as suas regras e o seu modelo, rodando num servidor ligado 24 horas.",
+  "objetivo": "desenhar sua equipe de agentes por funçêo, com contexto por empresa, regras escritas e o modelo de cada um.",
   "competencias": [
     "desenhar-equipe-de-agentes",
     "escrever-regras-de-programacao",
@@ -59,7 +59,7 @@
               "t": "Junta as respostas"
             }
           ],
-          "detalhe": "O coordenador recebe o pedido, decide qual especialista atende e devolve uma resposta só. Se é programação, passa para quem programa, já com o contexto."
+          "detalhe": "O coordenador recebe o pedido, decide qual especialista atende e devolve uma resposta só. Se é programaçêo, passa para quem programa, já com o contexto."
         },
         {
           "icone": "grafico",
@@ -69,7 +69,7 @@
         },
         {
           "icone": "terminal",
-          "titulo": "Programação",
+          "titulo": "Programaçêo",
           "sub": "Código",
           "detalhe": "Trabalha no repositório seguindo regras escritas: ramo próprio, commits pequenos, nada de segredo no código, e quem aprova a mudança é uma pessoa."
         },
@@ -86,7 +86,7 @@
           "detalhe": "Cada empresa tem o seu: sabe quem é cada pessoa da equipe, o produto, o CRM e a base de conhecimento daquela empresa."
         }
       ],
-      "legenda": "Separe por função E por empresa: o agente de uma clínica não precisa saber das obras da imobiliária."
+      "legenda": "Separe por funçêo E por empresa: o agente de uma clínica nêo precisa saber das obras da imobiliária."
     },
     {
       "tipo": "passos",
@@ -122,7 +122,7 @@
           "sub": "Por escrito",
           "texto": [
             "O jeito de trabalhar de um agente que já funciona vira arquivo de regras para o próximo. Peça ao agente bom: \"escreva as regras de como você trabalha comigo\".",
-            "Comece pelas regras do agente que programa: são as que mais evitam estrago."
+            "Comece pelas regras do agente que programa: sêo as que mais evitam estrago."
           ]
         }
       ]
@@ -130,17 +130,17 @@
     {
       "tipo": "codigo",
       "titulo": "Modelos para copiar",
-      "sub": "O mapa fica com você. As regras vão nas instruções do agente que programa.",
+      "sub": "O mapa fica com você. As regras vêo nas instruções do agente que programa.",
       "blocos": [
         {
           "rot": "Mapa da orquestra",
           "icone": "lista",
-          "conteudo": "AGENTE        | FUNÇÃO                         | CONTEXTO (fontes)                 | MODELO\ncoordenador   | recebe, encaminha, junta       | lista de agentes e o que cada faz | <top>\nfinanças      | caixa, contas, previsão        | ERP, bancos, planilha de custos   | <top em números>\nprogramação   | código e automações            | repositório, base de dados        | <top em código>\ndados         | vendas, estoque, campanhas     | CRM, anúncios, estoque            | <econômico>\ncomercial-<X> | atende e qualifica             | CRM da empresa X, produto, equipe | <econômico>\n\nREGRAS GERAIS\n- cada agente só lê as fontes da sua linha\n- pedido fora da função volta ao coordenador\n- relatório semanal de cada agente para você"
+          "conteudo": "AGENTE        | FUNÇêO                         | CONTEXTO (fontes)                 | MODELO\ncoordenador   | recebe, encaminha, junta       | lista de agentes e o que cada faz | <top>\nfinanças      | caixa, contas, previsêo        | ERP, bancos, planilha de custos   | <top em números>\nprogramaçêo   | código e automações            | repositório, base de dados        | <top em código>\ndados         | vendas, estoque, campanhas     | CRM, anúncios, estoque            | <econômico>\ncomercial-<X> | atende e qualifica             | CRM da empresa X, produto, equipe | <econômico>\n\nREGRAS GERAIS\n- cada agente só lê as fontes da sua linha\n- pedido fora da funçêo volta ao coordenador\n- relatório semanal de cada agente para você"
         },
         {
           "rot": "Regras do agente que programa",
           "icone": "git",
-          "conteudo": "REGRAS DE PROGRAMAÇÃO\n\nANTES DE COMEÇAR\n- git status e git pull no repositório certo\n- nunca trabalhar direto no main (nem no master)\n\nDURANTE\n- um ramo por tarefa, nome curto em kebab-case (ex.: corrige-boleto)\n- commits pequenos, mensagem que diz o que mudou\n- nada de senha, chave ou dado de cliente no repositório\n  (segredos ficam no cofre de senhas)\n\nFONTES DA VERDADE, NESTA ORDEM\n1. o repositório\n2. a base de dados\n3. a documentação\n\nNO FIM\n- abrir pull request com o que mudou e como testar\n- NUNCA fazer o merge: quem aprova é uma pessoa"
+          "conteudo": "REGRAS DE PROGRAMAÇêO\n\nANTES DE COMEÇAR\n- git status e git pull no repositório certo\n- nunca trabalhar direto no main (nem no master)\n\nDURANTE\n- um ramo por tarefa, nome curto em kebab-case (ex.: corrige-boleto)\n- commits pequenos, mensagem que diz o que mudou\n- nada de senha, chave ou dado de cliente no repositório\n  (segredos ficam no cofre de senhas)\n\nFONTES DA VERDADE, NESTA ORDEM\n1. o repositório\n2. a base de dados\n3. a documentaçêo\n\nNO FIM\n- abrir pull request com o que mudou e como testar\n- NUNCA fazer o merge: quem aprova é uma pessoa"
         }
       ]
     },
@@ -154,13 +154,13 @@
           "titulo": "1 · Mapa da orquestra",
           "min": "30 min",
           "texto": "Copie o mapa e preencha com as funções da sua empresa (ou das empresas que você atende). Comece com no máximo cinco agentes.",
-          "pronto": "o mapa tem de 3 a 5 agentes, cada um com função, fontes de contexto e o tipo de modelo."
+          "pronto": "o mapa tem de 3 a 5 agentes, cada um com funçêo, fontes de contexto e o tipo de modelo."
         },
         {
           "id": "e2",
           "titulo": "2 · Regras escritas",
           "min": "15 min",
-          "texto": "Salve as regras de programação como REGRAS-PROGRAMACAO.md no repositório onde o agente vai trabalhar e ajuste os nomes.",
+          "texto": "Salve as regras de programaçêo como REGRAS-PROGRAMACAO.md no repositório onde o agente vai trabalhar e ajuste os nomes.",
           "pronto": "o arquivo existe no repositório e tem a regra \"nunca fazer o merge\"."
         },
         {
@@ -168,7 +168,7 @@
           "titulo": "3 · Regras do agente bom",
           "min": "10 min",
           "texto": "Peça ao agente com quem você já trabalha bem: \"escreva as regras de como você trabalha comigo, em lista\".",
-          "pronto": "você tem a lista e marcou as regras que vão para os agentes novos."
+          "pronto": "você tem a lista e marcou as regras que vêo para os agentes novos."
         }
       ]
     },
@@ -192,7 +192,7 @@
           ],
           "certa": 1,
           "ref": "diagrama",
-          "explica": "Contexto separado evita mistura (o agente da clínica citando imóvel) e deixa cada um mais preciso. O coordenador encaminha; não substitui o especialista."
+          "explica": "Contexto separado evita mistura (o agente da clínica citando imóvel) e deixa cada um mais preciso. O coordenador encaminha; nêo substitui o especialista."
         },
         {
           "p": "Qual regra do agente que programa evita o maior estrago?",
@@ -203,10 +203,10 @@
           ],
           "certa": 2,
           "ref": "codigo",
-          "explica": "Nome de ramo e mensagem ajudam a organizar. Quem impede código errado de chegar ao sistema em uso é a aprovação humana no pull request."
+          "explica": "Nome de ramo e mensagem ajudam a organizar. Quem impede código errado de chegar ao sistema em uso é a aprovaçêo humana no pull request."
         },
         {
-          "p": "Por que rodar os agentes num servidor e não no notebook?",
+          "p": "Por que rodar os agentes num servidor e nêo no notebook?",
           "opcoes": [
             "Porque a equipe precisa deles a qualquer hora",
             "Porque no servidor o modelo responde melhor",
@@ -225,7 +225,7 @@
           ],
           "certa": 1,
           "ref": "passos",
-          "explica": "O agente que já trabalha bem com você conhece o seu jeito. As regras dele são o ponto de partida mais fiel; depois você ajusta."
+          "explica": "O agente que já trabalha bem com você conhece o seu jeito. As regras dele sêo o ponto de partida mais fiel; depois você ajusta."
         }
       ]
     },
@@ -239,7 +239,7 @@
         },
         {
           "t": "Contexto separado",
-          "texto": "Por função e por empresa, com a ordem das fontes da verdade."
+          "texto": "Por funçêo e por empresa, com a ordem das fontes da verdade."
         },
         {
           "t": "Regras escritas",
